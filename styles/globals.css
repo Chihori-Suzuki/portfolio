@@ -1,0 +1,33 @@
+@import "@fontsource/roboto";
+
+body {
+  /* background: floralwhite; */
+  background-image: url("../public/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #f3d1d0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+/* a {
+  color: F3D1D0;
+  text-decoration: none;
+} */
+
+nav {
+  margin: 30px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-bottom: 1px solid plum;
+}
+nav a {
+  /* color: #ffb5b3; */
+  margin-left: 12px;
+}
+
+nav .top-title {
+  margin-right: auto;
+}
