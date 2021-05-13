@@ -12,7 +12,6 @@ import Image from "next/image";
 export default function Layout({ children }) {
   return (
     <div className="content">
-      {/* <Image src="/background.jpg" alt="site top" layout="fill"></Image> */}
       <NavBar />
       {/* <Paper style={styles.paperContainer}> */}
       {/* </Paper> */}

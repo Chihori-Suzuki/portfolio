@@ -43,7 +43,7 @@ export default function Home() {
           </Typography>
         </Box>
         <Box ml={5} my={10}>
-          <Typography variant="h2" color="primary">
+          <Typography id="work" variant="h2" color="primary">
             WORKS
           </Typography>
         </Box>
@@ -54,6 +54,16 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
+        <Box ml={5} my={10}>
+          <Typography id="skill" variant="h2" color="primary">
+            SKILLS
+          </Typography>
+        </Box>
+        <Box ml={5} my={10}>
+          <Typography id="contact" variant="h2" color="primary">
+            CONTACT
+          </Typography>
+        </Box>
       </Paper>
     </div>
   );

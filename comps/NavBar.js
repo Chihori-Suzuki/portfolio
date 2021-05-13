@@ -43,15 +43,33 @@ export default function Navbar() {
         <div className={classes.logo}>
           <Image src="/cat_icon.png" alt="site logo" width={77} height={77} />
         </div>
-        <Button className={classes.button} variant="contained">
+        <Button
+          className={classes.button}
+          variant="contained"
+          onClick={() => {
+            window.location.href = "#work";
+          }}
+        >
           {/* <AnchorLink href="#works"> */}
           <Typography>WORKS</Typography>
           {/* </AnchorLink> */}
         </Button>
-        <Button className={classes.button} variant="contained">
+        <Button
+          className={classes.button}
+          variant="contained"
+          onClick={() => {
+            window.location.href = "#skill";
+          }}
+        >
           <Typography>SKILLS</Typography>
         </Button>
-        <Button className={classes.button} variant="contained">
+        <Button
+          className={classes.button}
+          variant="contained"
+          onClick={() => {
+            window.location.href = "#contact";
+          }}
+        >
           <Typography>CONTACTS</Typography>
         </Button>
       </Toolbar>
