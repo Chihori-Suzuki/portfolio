@@ -7,7 +7,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import WorkCards from "../comps/WorkCards";
 
@@ -18,7 +17,11 @@ const useStyle = makeStyles((theme) => {
     },
     toolbar: theme.mixins.toolbar,
     paper: {
-      color: "transparent",
+      color: "secondary",
+      opacity: 0.5,
+      marginLeft: 50,
+      marginRight: 50,
+      // backgroundColor: "transparent",
     },
   };
 });
@@ -33,25 +36,25 @@ export default function Home() {
 
   return (
     <div className={classes.toolbar}>
-      {/* <Paper className={classes.paper}> */}
-      <Box my={20} mx={15}>
-        <Typography variant="h2" color="primary">
-          Chiori Suzuki
-        </Typography>
-      </Box>
-      <Box ml={5} my={10}>
-        <Typography variant="h2" color="primary">
-          WORKS
-        </Typography>
-      </Box>
-      <Grid container spacing={3} mx={5}>
-        {works.map((work) => (
-          <Grid item key={work.id} xs={12} md={6} lg={4}>
-            <WorkCards work={work} />
-          </Grid>
-        ))}
-      </Grid>
-      {/* </Paper> */}
+      <Paper className={classes.paper}>
+        <Box py={20} mx={15}>
+          <Typography variant="h2" color="primary">
+            Chiori Suzuki
+          </Typography>
+        </Box>
+        <Box ml={5} my={10}>
+          <Typography variant="h2" color="primary">
+            WORKS
+          </Typography>
+        </Box>
+        <Grid container spacing={3} mx={5}>
+          {works.map((work) => (
+            <Grid item key={work.id} xs={12} md={6} lg={4}>
+              <WorkCards work={work} />
+            </Grid>
+          ))}
+        </Grid>
+      </Paper>
     </div>
   );
 }
