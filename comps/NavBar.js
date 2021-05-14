@@ -17,15 +17,15 @@ import {
 const useStyles = makeStyles((theme) => {
   return {
     appBar: {
-      marginLeft: 30,
-      marginRight: 30,
+      width: "auto",
+      marginLeft: 40,
+      marginRight: 40,
       marginTop: 10,
     },
     logo: {
       flexGrow: 1,
     },
     link: {
-      marginLeft: 20,
       color: "white",
     },
     box: {
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => {
       boxShadow: 3,
       background: "linear-gradient(to right bottom, #430089, #fc9dff)",
       marginLeft: 10,
+      padding: 10,
     },
   };
 });
@@ -53,16 +54,13 @@ export default function Navbar() {
         <Box className={classes.box}>
           <Link
             className={classes.link}
-            // variant="contained"
             activeClass="active"
             to="work"
             smooth={true}
             offset={-70}
             duration={500}
           >
-            {/* <AnchorLink href="#works"> */}
             <Typography>WORKS</Typography>
-            {/* </AnchorLink> */}
           </Link>
         </Box>
         <Box className={classes.box}>

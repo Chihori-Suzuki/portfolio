@@ -2,6 +2,7 @@ import {
   Box,
   Container,
   Grid,
+  IconButton,
   makeStyles,
   Paper,
   Typography,
@@ -17,14 +18,21 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 const useStyle = makeStyles((theme) => {
   return {
     root: {
-      display: "flex",
+      display: "fixed",
     },
     toolbar: theme.mixins.toolbar,
+    top: {
+      marginTop: "20%",
+      marginBottom: "20%",
+      marginLeft: "35%",
+      marginRight: "35%",
+    },
     paper: {
       color: "secondary",
       opacity: 0.75,
       marginLeft: 70,
       marginRight: 70,
+      padding: 30,
       // backgroundColor: "transparent",
     },
     card: {
@@ -32,6 +40,9 @@ const useStyle = makeStyles((theme) => {
     },
     typography: {
       marginBottom: 30,
+    },
+    grid: {
+      margin: 30,
     },
   };
 });
@@ -45,13 +56,17 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={classes.toolbar}>
+    <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Box py={20} mx={15}>
-          <Typography variant="h2" color="primary">
+        {/* main */}
+        <Container className={classes.top}>
+          <Typography id="top" variant="h2" color="primary">
             Chiori Suzuki
           </Typography>
-        </Box>
+          <Typography variant="h6"></Typography>
+        </Container>
+
+        {/* Works */}
         <Box ml={5} my={10}>
           <Typography id="work" variant="h2" color="primary">
             WORKS
@@ -64,47 +79,53 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
+
+        {/* About */}
         <Box ml={5} my={5}>
           <Typography id="about" variant="h2" color="primary">
             ABOUT
           </Typography>
         </Box>
         <Grid container spacing={3}>
-          <Grid item>
-            <Container>
-              <Image src="/about.jpg" alt="profile" width={260} height={323} />
-              <Typography variant="body1">Chiori Suzuki</Typography>
-              <Typography variant="body2">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.{" "}
-              </Typography>
-            </Container>
+          <Grid item md={6}>
+            <Image
+              src="/about.jpg"
+              alt="profile"
+              width={260}
+              height={323}
+              display="flex"
+            />
+            <Typography variant="body1">Chiori Suzuki</Typography>
+            <Typography variant="body2">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book..{" "}
+            </Typography>
           </Grid>
-          <Grid item>
-            <Container>
-              <Typography className={classes.typography} variant="h5">
-                Java
-              </Typography>
-              <Typography className={classes.typography} variant="h5">
-                Java
-              </Typography>
-              <Typography className={classes.typography} variant="h5">
-                Swift
-              </Typography>
-              <Typography className={classes.typography} variant="h5">
-                React
-              </Typography>
-              <Typography className={classes.typography} variant="h5">
-                Javascript
-              </Typography>
-              <Typography className={classes.typography} variant="h5">
-                illustrator
-              </Typography>
-            </Container>
+          <Grid item md={6}>
+            <Typography className={classes.typography} variant="h5">
+              Java
+            </Typography>
+            <Typography className={classes.typography} variant="h5">
+              Java
+            </Typography>
+            <Typography className={classes.typography} variant="h5">
+              Swift
+            </Typography>
+            <Typography className={classes.typography} variant="h5">
+              React
+            </Typography>
+            <Typography className={classes.typography} variant="h5">
+              Javascript
+            </Typography>
+            <Typography className={classes.typography} variant="h5">
+              illustrator
+            </Typography>
           </Grid>
         </Grid>
+
+        {/* Contact */}
         <Box ml={5} my={10}>
           <Typography
             className={classes.typography}
@@ -115,13 +136,25 @@ export default function Home() {
             CONTACT
           </Typography>
           <Typography variant="h5">feel free ro contact me</Typography>
-          <Grid>
+          <Grid className={classes.grid}>
             <Grid item>
-              <InstagramIcon>
-                <Typography href="https://www.instagram.com/">click</Typography>
-              </InstagramIcon>
-              <EmailIcon></EmailIcon>
-              <GitHubIcon></GitHubIcon>
+              <IconButton
+                href="https://www.instagram.com/chihhorin/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramIcon style={{ fontSize: 40 }}></InstagramIcon>
+              </IconButton>
+              <IconButton
+                href="https://github.com/Chihori-Suzuki"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitHubIcon style={{ fontSize: 40 }}></GitHubIcon>
+              </IconButton>
+              <IconButton href="mailto:suzuki4254545@gmail.com" target="_top">
+                <EmailIcon style={{ fontSize: 40 }}></EmailIcon>
+              </IconButton>
             </Grid>
           </Grid>
         </Box>

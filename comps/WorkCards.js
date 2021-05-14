@@ -6,7 +6,7 @@ export default function WorkCard({ work }) {
       <Card>
         <CardHeader title={work.title} subheader={work.category}></CardHeader>
         <CardContent>
-          <Typography varient="body2" color="textSecondary">
+          <Typography varient="body2" color="normal">
             {work.details}
           </Typography>
         </CardContent>
