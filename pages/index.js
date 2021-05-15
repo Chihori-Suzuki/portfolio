@@ -19,7 +19,6 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import EmailIcon from "@material-ui/icons/Email";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import StarIcon from "@material-ui/icons/Star";
-import { Star } from "material-ui-icons";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -56,93 +55,30 @@ export default function Home() {
   const [works, setWorks] = useState([]);
   const classes = useStyle();
 
-  const stars = [
-    {
-      id: 1,
-      icon: (
-        <Container>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-        </Container>
-      ),
-    },
-    {
-      id: 2,
-      icon: (
-        <Container>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-        </Container>
-      ),
-    },
-    {
-      id: 3,
-      icon: (
-        <Container>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-        </Container>
-      ),
-    },
-    {
-      id: 4,
-      icon: (
-        <Container>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="secondary"></StarIcon>
-        </Container>
-      ),
-    },
-    {
-      id: 5,
-      icon: (
-        <Container>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-          <StarIcon color="normal"></StarIcon>
-        </Container>
-      ),
-    },
-  ];
-
   const menuItems = [
     {
       text: "Java",
-      icon: stars.icon((stars.id = 1)),
+      icon: <StarIcon color="normal"></StarIcon>,
     },
     {
       text: "VB.NET",
-      icon: stars.icon((stars.id = 2)),
+      icon: <StarIcon color="normal"></StarIcon>,
     },
     {
       text: "Objective-C",
-      icon: stars.icon((stars.id = 3)),
+      icon: <StarIcon color="normal"></StarIcon>,
     },
     {
       text: "Swift",
-      icon: stars.icon((stars.id = 4)),
+      icon: <StarIcon color="normal"></StarIcon>,
     },
     {
       text: "React",
-      icon: stars.icon((stars.id = 5)),
+      icon: <StarIcon color="normal"></StarIcon>,
     },
     {
       text: "illustrator",
-      icon: stars.icon((id = 1)),
+      icon: <StarIcon color="normal"></StarIcon>,
     },
   ];
 
@@ -205,7 +141,7 @@ export default function Home() {
               {menuItems.map((item) => (
                 <ListItem key={item.text}>
                   <ListItemText primary={item.text} />
-                  <Container>{item.icon}</Container>
+                  <ListItemIcon>{item.icon}</ListItemIcon>
                 </ListItem>
               ))}
             </List>
