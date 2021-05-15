@@ -205,7 +205,7 @@ export default function Home() {
               {menuItems.map((item) => (
                 <ListItem key={item.text}>
                   <ListItemText primary={item.text} />
-                  <ListItemText>{item.icon}</ListItemText>
+                  <Container>{item.icon}</Container>
                 </ListItem>
               ))}
             </List>
