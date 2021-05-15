@@ -3,6 +3,10 @@ import {
   Container,
   Grid,
   IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
   makeStyles,
   Paper,
   Typography,
@@ -14,25 +18,27 @@ import Image from "next/image";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import EmailIcon from "@material-ui/icons/Email";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import StarIcon from "@material-ui/icons/Star";
+import { Star } from "material-ui-icons";
 
 const useStyle = makeStyles((theme) => {
   return {
     root: {
-      display: "fixed",
+      display: "flex",
     },
     toolbar: theme.mixins.toolbar,
     top: {
-      marginTop: "20%",
-      marginBottom: "20%",
-      marginLeft: "35%",
-      marginRight: "35%",
+      marginTop: "25%",
+      marginBottom: "25%",
+      textAlign: "center",
     },
     paper: {
+      display: "fixed",
       color: "secondary",
-      opacity: 0.75,
-      marginLeft: 70,
-      marginRight: 70,
-      padding: 30,
+      opacity: 0.7,
+      marginLeft: "10%",
+      marginRight: "10%",
+      padding: "5%",
       // backgroundColor: "transparent",
     },
     card: {
@@ -49,6 +55,97 @@ const useStyle = makeStyles((theme) => {
 export default function Home() {
   const [works, setWorks] = useState([]);
   const classes = useStyle();
+
+  const stars = [
+    {
+      id: 1,
+      icon: (
+        <Container>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+        </Container>
+      ),
+    },
+    {
+      id: 2,
+      icon: (
+        <Container>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+        </Container>
+      ),
+    },
+    {
+      id: 3,
+      icon: (
+        <Container>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+        </Container>
+      ),
+    },
+    {
+      id: 4,
+      icon: (
+        <Container>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+        </Container>
+      ),
+    },
+    {
+      id: 5,
+      icon: (
+        <Container>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+          <StarIcon color="normal"></StarIcon>
+        </Container>
+      ),
+    },
+  ];
+
+  const menuItems = [
+    {
+      text: "Java",
+      icon: stars.icon((stars.id = 1)),
+    },
+    {
+      text: "VB.NET",
+      icon: stars.icon((stars.id = 2)),
+    },
+    {
+      text: "Objective-C",
+      icon: stars.icon((stars.id = 3)),
+    },
+    {
+      text: "Swift",
+      icon: stars.icon((stars.id = 4)),
+    },
+    {
+      text: "React",
+      icon: stars.icon((stars.id = 5)),
+    },
+    {
+      text: "illustrator",
+      icon: stars.icon((id = 1)),
+    },
+  ];
+
   useEffect(() => {
     fetch("http://localhost:8001/works")
       .then((res) => res.json())
@@ -72,9 +169,9 @@ export default function Home() {
             WORKS
           </Typography>
         </Box>
-        <Grid container spacing={3} mx={5}>
+        <Grid container spacing={3} mx={6}>
           {works.map((work) => (
-            <Grid item key={work.id} xs={12} md={6} lg={4}>
+            <Grid item key={work.id} xs={12} md={6} lg={3}>
               <WorkCards className={classes.card} work={work} />
             </Grid>
           ))}
@@ -86,7 +183,7 @@ export default function Home() {
             ABOUT
           </Typography>
         </Box>
-        <Grid container spacing={3}>
+        <Grid container spacing={6}>
           <Grid item md={6}>
             <Image
               src="/about.jpg"
@@ -104,24 +201,14 @@ export default function Home() {
             </Typography>
           </Grid>
           <Grid item md={6}>
-            <Typography className={classes.typography} variant="h5">
-              Java
-            </Typography>
-            <Typography className={classes.typography} variant="h5">
-              Java
-            </Typography>
-            <Typography className={classes.typography} variant="h5">
-              Swift
-            </Typography>
-            <Typography className={classes.typography} variant="h5">
-              React
-            </Typography>
-            <Typography className={classes.typography} variant="h5">
-              Javascript
-            </Typography>
-            <Typography className={classes.typography} variant="h5">
-              illustrator
-            </Typography>
+            <List>
+              {menuItems.map((item) => (
+                <ListItem key={item.text}>
+                  <ListItemText primary={item.text} />
+                  <ListItemText>{item.icon}</ListItemText>
+                </ListItem>
+              ))}
+            </List>
           </Grid>
         </Grid>
 
