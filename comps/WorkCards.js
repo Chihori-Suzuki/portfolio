@@ -16,7 +16,7 @@ export default function WorkCard({ work }) {
   //   setNotes(newNotes);
   // };
 
-  const openWindow = (props) => {};
+  //   const openWindow = (props) => {};
   return (
     <div>
       <Card>
