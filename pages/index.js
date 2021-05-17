@@ -2,6 +2,7 @@ import {
   Box,
   Container,
   Grid,
+  Icon,
   IconButton,
   List,
   ListItem,
@@ -19,6 +20,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import EmailIcon from "@material-ui/icons/Email";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import StarIcon from "@material-ui/icons/Star";
+import { pink, purple } from "@material-ui/core/colors";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -46,6 +48,9 @@ const useStyle = makeStyles((theme) => {
     typography: {
       marginBottom: 30,
     },
+    text: {
+      color: purple[800],
+    },
     grid: {
       margin: 30,
     },
@@ -55,30 +60,88 @@ export default function Home() {
   const [works, setWorks] = useState([]);
   const classes = useStyle();
 
+  const stars = [
+    {
+      eval1: (
+        <Container>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+        </Container>
+      ),
+    },
+    {
+      eval2: (
+        <Container>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+        </Container>
+      ),
+    },
+    {
+      eval3: (
+        <Container>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+        </Container>
+      ),
+    },
+    {
+      eval4: (
+        <Container>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="secondary"></StarIcon>
+        </Container>
+      ),
+    },
+    {
+      eval5: (
+        <Container>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+          <StarIcon color="primary"></StarIcon>
+        </Container>
+      ),
+    },
+  ];
+
   const menuItems = [
     {
       text: "Java",
-      icon: <StarIcon color="normal"></StarIcon>,
+      icon: stars.eval4,
     },
     {
       text: "VB.NET",
-      icon: <StarIcon color="normal"></StarIcon>,
+      icon: stars.eval4,
     },
     {
       text: "Objective-C",
-      icon: <StarIcon color="normal"></StarIcon>,
+      icon: stars.eval2,
     },
     {
       text: "Swift",
-      icon: <StarIcon color="normal"></StarIcon>,
+      icon: stars.eval3,
     },
     {
       text: "React",
-      icon: <StarIcon color="normal"></StarIcon>,
+      icon: stars.eval4,
     },
     {
       text: "illustrator",
-      icon: <StarIcon color="normal"></StarIcon>,
+      icon: stars.eval3,
     },
   ];
 
@@ -129,22 +192,94 @@ export default function Home() {
               display="flex"
             />
             <Typography variant="body1">Chiori Suzuki</Typography>
-            <Typography variant="body2">
+            <Typography>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book..{" "}
             </Typography>
           </Grid>
+          {/* {menuItems.map((item) => (
+            <Grid item key={item.text} md={6}>
+              <Typography>{item.text} </Typography>
+              <dev>{item.icon}</dev>
+            </Grid>
+          ))} */}
           <Grid item md={6}>
-            <List>
-              {menuItems.map((item) => (
-                <ListItem key={item.text}>
-                  <ListItemText primary={item.text} />
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                </ListItem>
-              ))}
-            </List>
+            <Box display="flex" flexDirection="row">
+              <Box flexGrow={1} mb={1}>
+                <Typography variant="body1" gutterBottom>
+                  Jave
+                </Typography>
+              </Box>
+              <Box>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon color="secondary"></StarIcon>
+              </Box>
+            </Box>
+            <Box display="flex" flexDirection="row">
+              <Box flexGrow={1} mb={1}>
+                <Typography gutterBottom>VB.NET</Typography>
+              </Box>
+              <Box>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon color="secondary"></StarIcon>
+              </Box>
+            </Box>
+            <Box display="flex" flexDirection="row">
+              <Box flexGrow={1} mb={1}>
+                <Typography gutterBottom>Swift</Typography>
+              </Box>
+              <Box>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon color="secondary"></StarIcon>
+              </Box>
+            </Box>
+            <Box display="flex" flexDirection="row">
+              <Box flexGrow={1} mb={1}>
+                <Typography gutterBottom>ObjectiveC</Typography>
+              </Box>
+              <Box>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon color="secondary"></StarIcon>
+                <StarIcon color="secondary"></StarIcon>
+              </Box>
+            </Box>
+            <Box display="flex" flexDirection="row">
+              <Box flexGrow={1} mb={1}>
+                <Typography gutterBottom>React</Typography>
+              </Box>
+              <Box>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon color="secondary"></StarIcon>
+              </Box>
+            </Box>
+            <Box display="flex" flexDirection="row">
+              <Box flexGrow={1} mb={1}>
+                <Typography gutterBottom>illustrator</Typography>
+              </Box>
+              <Box>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon className={classes.text}></StarIcon>
+                <StarIcon color="secondary"></StarIcon>
+                <StarIcon color="secondary"></StarIcon>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
 
@@ -158,7 +293,7 @@ export default function Home() {
           >
             CONTACT
           </Typography>
-          <Typography variant="h5">feel free ro contact me</Typography>
+          <Typography variant="h5">feel free to contact me</Typography>
           <Grid className={classes.grid}>
             <Grid item>
               <IconButton
