@@ -1,11 +1,13 @@
 import {
   ButtonBase,
   Card,
+  CardActionArea,
   CardContent,
   CardHeader,
   Typography,
 } from "@material-ui/core";
 import React from "react";
+import { Link, useHistory } from "react-router-dom";
 
 export default function WorkCard({ work }) {
   // const handleDelete = async (id) => {
@@ -15,20 +17,19 @@ export default function WorkCard({ work }) {
   //   const newNotes = notes.filter((note) => note.id != id);
   //   setNotes(newNotes);
   // };
-
-  //   const openWindow = (props) => {};
+  const history = useHistory();
   return (
-    <div>
-      <Card>
-        <ButtonBase>
+    // <Link to={"/works"}>
+    <Card>
+      <CardActionArea href="/works">
+        <ButtonBase /* onClick={() => history.push("/works")} */>
           <CardHeader title={work.title} subheader={work.category}></CardHeader>
           <CardContent>
-            <Typography varient="body2" color="normal">
-              {work.details}
-            </Typography>
+            <Typography varient="body2">{work.details}</Typography>
           </CardContent>
         </ButtonBase>
-      </Card>
-    </div>
+      </CardActionArea>
+    </Card>
+    // </Link>
   );
 }

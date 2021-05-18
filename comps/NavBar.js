@@ -1,20 +1,10 @@
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import Typography from "@material-ui/core/Typography";
 import Image from "next/image";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-import {
-  AppBar,
-  Box,
-  Button,
-  makeStyles,
-  Menu,
-  MenuItem,
-  responsiveFontSizes,
-  Toolbar,
-} from "@material-ui/core";
+import { AppBar, Box, makeStyles, Toolbar } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(() => {
   return {
     appBar: {
       width: "auto",
