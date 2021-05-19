@@ -96,7 +96,7 @@ export default function About() {
 
   return (
     <div>
-      <Box ml={5} my={5}>
+      <Box ml={5} mb={5} mt={10}>
         <Typography id="about" variant="h2" color="primary">
           ABOUT
         </Typography>

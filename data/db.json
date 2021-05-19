@@ -4,25 +4,29 @@
         "title": "Calorie and recipe",
         "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "category": "iOS",
-        "id": 1
+        "id": 1,
+        "image": "flower1.jpg"
       },
       {
         "title": "something project 2",
         "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
         "category": "sss",
-        "id": 2
+        "id": 2,
+        "image": "view1.jpg"
       },
       {
         "title": "something project 3",
         "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "category": "sss",
-        "id": 3
+        "id": 3,
+        "image": "flower2.jpg"
       },
       {
         "title": "Portfolio",
         "details": "making portfolio",
         "category": "sss",
-        "id": 4
+        "id": 4,
+        "image": "view2.jpg"
       }
     ]
   }

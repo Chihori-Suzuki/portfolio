@@ -24,7 +24,7 @@ export default function ContactPage() {
   const classes = useStyle();
 
   return (
-    <Box ml={5} my={10}>
+    <Box ml={5} my={15}>
       <Typography
         className={classes.typography}
         id="contact"
