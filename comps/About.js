@@ -14,6 +14,11 @@ const useStyle = makeStyles((theme) => {
     grid: {
       margin: 30,
     },
+    box: {
+      "&:hover": {
+        transform: "scale3d(1.05, 1.05, 1)",
+      },
+    },
   };
 });
 
@@ -120,7 +125,12 @@ export default function About() {
         </Grid>
         <Grid item md={6}>
           {menuItems.map((item) => (
-            <Box key={item.text} display="flex" flexDirection="row">
+            <Box
+              className={classes.box}
+              key={item.text}
+              display="flex"
+              flexDirection="row"
+            >
               <Box flexGrow={1} mb={1}>
                 <Typography variant="body1" gutterBottom>
                   {item.text}

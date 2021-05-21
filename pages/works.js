@@ -2,6 +2,7 @@ import { Box, Container, Grid } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const useStyle = makeStyles({
   tool: {
@@ -9,13 +10,24 @@ const useStyle = makeStyles({
   },
 });
 
-const works = () => {
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  //   const res = await fetch(`https://restcountries.eu/rest/v2/name/${id}`);
+  const res = await fetch("http://localhost:8001/works/" + id);
+  const work = await res.json();
+
+  console.log(`Fetched place: ${work.name}`);
+  return { props: { work } };
+}
+
+export default function Works() {
   const classes = useStyle();
+
   return (
     <Grid container alignItems="center" justify="center">
       <Grid item>
         <Typography variant="h4" className={classes.tool}>
-          recipe and calorie manager app
+          {work.title}
         </Typography>
         <Image
           src="/sample.jpg"
@@ -51,6 +63,4 @@ const works = () => {
       </Grid>
     </Grid>
   );
-};
-
-export default works;
+}

@@ -20,6 +20,9 @@ const useStyles = makeStyles(() => {
       background: "linear-gradient(to right bottom, #430089, #fc9dff)",
       marginLeft: 15,
       padding: 10,
+      "&:hover": {
+        background: "linear-gradient(to right bottom, #9BA8FC, #F2BEE4)",
+      },
     },
   };
 });
@@ -35,7 +38,9 @@ export default function Navbar() {
     >
       <Toolbar>
         <div className={classes.logo}>
-          <Image src="/cat_icon.png" alt="site logo" width={77} height={77} />
+          <Button href="/">
+            <Image src="/cat_icon.png" alt="site logo" width={77} height={77} />
+          </Button>{" "}
         </div>
         {/* <Box className={classes.box}> */}
         <Button
