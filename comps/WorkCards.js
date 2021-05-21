@@ -31,6 +31,5 @@ export default function WorkCard({ work }) {
         </ButtonBase>
       </CardActionArea>
     </Card>
-    // </Link>
   );
 }
