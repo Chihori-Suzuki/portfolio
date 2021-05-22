@@ -25,6 +25,9 @@ const useStyles = makeStyles(() => {
         background: "linear-gradient(to right bottom, #9BA8FC, #F2BEE4)",
       },
     },
+    textColor: {
+      color: "white",
+    },
   };
 });
 
@@ -52,7 +55,7 @@ export default function Navbar() {
           offset={-70}
           duration={500}
         >
-          <Link href="/#work" behavior="smooth">
+          <Link className={classes.textColor} href="/#work">
             WORKS
           </Link>
         </Button>
@@ -61,23 +64,27 @@ export default function Navbar() {
           className={classes.link}
           activeClass="active"
           // component={Link}
-          href="#about"
-          smooth={true}
+          // href="#about"
+          // smooth={true}
           offset={-70}
           duration={500}
         >
-          <Typography>ABOUT</Typography>
+          <Link className={classes.textColor} href="/#about">
+            ABOUT
+          </Link>
         </Button>
         <Button
           className={classes.link}
           activeClass="active"
           // component={Link}
-          href="#contact"
-          smooth={true}
+          // href="#contact"
+          // smooth={true}
           offset={-70}
           duration={500}
         >
-          <Typography>CONTACTS</Typography>
+          <Link className={classes.textColor} href="/#contact">
+            CONTACTS
+          </Link>
         </Button>
       </Toolbar>
     </AppBar>

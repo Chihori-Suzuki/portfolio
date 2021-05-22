@@ -7,11 +7,23 @@ import {
   CardMedia,
   Typography,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 import React from "react";
 
+const useStyle = makeStyles(() => {
+  return {
+    card: {
+      "&:hover": {
+        transform: "scale3d(1.05, 1.05, 1)",
+      },
+    },
+  };
+});
+
 export default function WorkCard({ work }) {
+  const classes = useStyle();
   return (
-    <Card>
+    <Card className={classes.card} elevation={3}>
       <CardActionArea href={"/works?id=" + work.id}>
         <ButtonBase>
           <CardMedia
