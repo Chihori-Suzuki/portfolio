@@ -21,7 +21,7 @@ export async function getServerSideProps(context) {
 export default function Works({ work }) {
   const classes = useStyle();
   return (
-    <Grid container alignItems="center" justify="center">
+    <Grid container>
       <Grid item>
         <Typography variant="h4" className={classes.tool}>
           {work.title}

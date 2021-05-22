@@ -1,8 +1,9 @@
 import Typography from "@material-ui/core/Typography";
 import Image from "next/image";
-import { Link, animateScroll as scroll } from "react-scroll";
-
+// import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "@material-ui/core";
 import { AppBar, Box, makeStyles, Toolbar, Button } from "@material-ui/core";
+import { AnimatePresence, motion } from "framer-motion";
 
 const useStyles = makeStyles(() => {
   return {
@@ -46,20 +47,21 @@ export default function Navbar() {
         <Button
           className={classes.link}
           activeClass="active"
-          component={Link}
-          to="work"
-          smooth={true}
+          // component={Link}
+          // smooth={true}
           offset={-70}
           duration={500}
         >
-          <Typography>WORKS</Typography>
+          <Link href="/#work" behavior="smooth">
+            WORKS
+          </Link>
         </Button>
         {/* </Box> */}
         <Button
           className={classes.link}
           activeClass="active"
-          component={Link}
-          to="about"
+          // component={Link}
+          href="#about"
           smooth={true}
           offset={-70}
           duration={500}
@@ -69,8 +71,8 @@ export default function Navbar() {
         <Button
           className={classes.link}
           activeClass="active"
-          component={Link}
-          to="contact"
+          // component={Link}
+          href="#contact"
           smooth={true}
           offset={-70}
           duration={500}
