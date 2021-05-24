@@ -54,8 +54,11 @@ export default function Home() {
       {/* <Paper className={classes.paper}> */}
       {/* main */}
       <Container className={classes.top}>
-        <Typography id="top" variant="h2" color="primary">
+        <Typography id="top" variant="h2" color="primary" gutterBottom>
           Chiori Suzuki
+        </Typography>
+        <Typography variant="h4" color="secondary">
+          Web developer
         </Typography>
         <Typography variant="h6"></Typography>
       </Container>
