@@ -14,6 +14,8 @@ export const cache = createCache({ key: "css", prepend: true });
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
+  // const router = useRouter();
+
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");

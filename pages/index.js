@@ -71,7 +71,7 @@ export default function Home() {
       </Box>
       <Grid container spacing={5}>
         {works.map((work) => (
-          <Grid item key={work.id} xs={12} md={6} lg={6}>
+          <Grid item key={work.id} xs={12} md={12} lg={6}>
             <WorkCards className={classes.card} work={work} />
           </Grid>
         ))}
