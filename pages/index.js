@@ -51,7 +51,6 @@ export default function Home() {
 
   return (
     <div>
-      {/* <Paper className={classes.paper}> */}
       {/* main */}
       <Container className={classes.top}>
         <Typography id="top" variant="h2" color="primary" gutterBottom>
@@ -62,7 +61,6 @@ export default function Home() {
         </Typography>
         <Typography variant="h6"></Typography>
       </Container>
-
       {/* Works */}
       <Box ml={5} my={10}>
         <Typography id="work" variant="h2" color="primary">
@@ -76,13 +74,10 @@ export default function Home() {
           </Grid>
         ))}
       </Grid>
-
       {/* About */}
       <About></About>
-
       {/* Contact */}
       <ContactPage></ContactPage>
-      {/* </Paper> */}
     </div>
   );
 }

@@ -16,7 +16,8 @@ const useStyle = makeStyles(() => {
       marginBottom: 30,
     },
     grid: {
-      margin: 30,
+      marginRight: "35%",
+      marginTop: "5%",
     },
     icon: {
       color: "white",
@@ -36,7 +37,7 @@ export default function ContactPage() {
   const classes = useStyle();
 
   return (
-    <Box ml={5} my={15}>
+    <Box ml="3%" my="5%">
       <Typography
         className={classes.typography}
         id="contact"
