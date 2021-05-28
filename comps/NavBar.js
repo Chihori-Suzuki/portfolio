@@ -1,6 +1,5 @@
 import Typography from "@material-ui/core/Typography";
 import Image from "next/image";
-// import { Link, animateScroll as scroll } from "react-scroll";
 import { Link } from "@material-ui/core";
 import { AppBar, Box, makeStyles, Toolbar, Button } from "@material-ui/core";
 import { AnimatePresence, motion } from "framer-motion";
@@ -52,7 +51,6 @@ export default function Navbar() {
             <Image src="/cat_icon.png" alt="site logo" width={77} height={77} />
           </Button>{" "}
         </div>
-        {/* <Box className={classes.box}> */}
         <Button
           className={classes.link}
           activeClass="active"
@@ -63,7 +61,6 @@ export default function Navbar() {
             WORKS
           </Link>
         </Button>
-        {/* </Box> */}
         <Button
           className={classes.link}
           activeClass="active"
