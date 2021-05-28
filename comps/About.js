@@ -118,7 +118,7 @@ export default function About() {
         </Typography>
       </Box>
       <Grid container spacing={6}>
-        <Grid item md={6} sm={12}>
+        <Grid item md={6} sm={12} xs={12}>
           <Image
             src="/about.jpg"
             alt="profile"
@@ -134,7 +134,7 @@ export default function About() {
             and scrambled it to make a type specimen book..{" "}
           </Typography>
         </Grid>
-        <Grid item md={6} sm={12}>
+        <Grid item md={6} sm={12} xs={12}>
           {menuItems.map((item) => (
             <Box
               className={classes.box}
