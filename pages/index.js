@@ -3,7 +3,6 @@ import {
   Container,
   Grid,
   makeStyles,
-  Paper,
   Typography,
 } from "@material-ui/core";
 import React from "react";
@@ -20,19 +19,28 @@ const useStyle = makeStyles((theme) => {
       marginBottom: "25%",
       textAlign: "center",
     },
-    paper: {
-      display: "fixed",
-      color: "secondary",
-      opacity: 0.7,
-      marginLeft: "10%",
-      marginRight: "10%",
-      padding: "5%",
-    },
     card: {
       color: "secondary",
     },
     typography: {
-      marginBottom: 30,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "30px",
+        fontWeight: "300",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "50px",
+        fontWeight: "350",
+      },
+    },
+    typography1: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "20px",
+        fontWeight: "300",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "30px",
+        fontWeight: "400",
+      },
     },
     grid: {
       margin: 30,
@@ -53,17 +61,17 @@ export default function Home() {
     <div>
       {/* main */}
       <Container className={classes.top}>
-        <Typography id="top" variant="h2" color="primary" gutterBottom>
+        <Typography className={classes.typography} id="top" color="primary">
           Chiori Suzuki
         </Typography>
-        <Typography variant="h4" color="secondary">
+        <Typography className={classes.typography1} color="secondary">
           Web developer
         </Typography>
         <Typography variant="h6"></Typography>
       </Container>
       {/* Works */}
-      <Box ml={5} my={10}>
-        <Typography id="work" variant="h2" color="primary">
+      <Box ml="3%" my="5%">
+        <Typography className={classes.typography} id="work" color="primary">
           WORKS
         </Typography>
       </Box>

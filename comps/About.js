@@ -19,6 +19,17 @@ const useStyle = makeStyles((theme) => {
         transform: "scale3d(1.05, 1.05, 1)",
       },
     },
+    typography: {
+      // marginBottom: 30,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "30px",
+        fontWeight: "300",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "50px",
+        fontWeight: "350",
+      },
+    },
   };
 });
 
@@ -101,13 +112,13 @@ export default function About() {
 
   return (
     <div>
-      <Box ml={5} mb={5} mt={10}>
-        <Typography id="about" variant="h2" color="primary">
+      <Box ml="3%" my="5%">
+        <Typography className={classes.typography} id="about" color="primary">
           ABOUT
         </Typography>
       </Box>
       <Grid container spacing={6}>
-        <Grid item md={6}>
+        <Grid item md={6} sm={12}>
           <Image
             src="/about.jpg"
             alt="profile"
@@ -123,7 +134,7 @@ export default function About() {
             and scrambled it to make a type specimen book..{" "}
           </Typography>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} sm={12}>
           {menuItems.map((item) => (
             <Box
               className={classes.box}
