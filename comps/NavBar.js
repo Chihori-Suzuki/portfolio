@@ -5,7 +5,7 @@ import { Link } from "@material-ui/core";
 import { AppBar, Box, makeStyles, Toolbar, Button } from "@material-ui/core";
 import { AnimatePresence, motion } from "framer-motion";
 
-const useStyles = makeStyles(() => {
+const useStyles = makeStyles((theme) => {
   return {
     appBar: {
       width: "auto",
@@ -27,6 +27,12 @@ const useStyles = makeStyles(() => {
     },
     textColor: {
       color: "white",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "10px",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "15px",
+      },
     },
   };
 });
@@ -50,8 +56,6 @@ export default function Navbar() {
         <Button
           className={classes.link}
           activeClass="active"
-          // component={Link}
-          // smooth={true}
           offset={-70}
           duration={500}
         >
@@ -63,9 +67,6 @@ export default function Navbar() {
         <Button
           className={classes.link}
           activeClass="active"
-          // component={Link}
-          // href="#about"
-          // smooth={true}
           offset={-70}
           duration={500}
         >
@@ -76,9 +77,6 @@ export default function Navbar() {
         <Button
           className={classes.link}
           activeClass="active"
-          // component={Link}
-          // href="#contact"
-          // smooth={true}
           offset={-70}
           duration={500}
         >
