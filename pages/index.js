@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import WorkCards from "../comps/WorkCards";
 import ContactPage from "../comps/ContactPage";
 import About from "../comps/About";
+import { motion } from "framer-motion";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -47,6 +48,21 @@ const useStyle = makeStyles((theme) => {
     },
   };
 });
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { delay: 1.5, duration: 1.5 },
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
+};
+
 export default function Home() {
   const [works, setWorks] = useState([]);
   const classes = useStyle();
@@ -58,7 +74,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <motion.div
+      className="base container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       {/* main */}
       <Container className={classes.top}>
         <Typography className={classes.typography} id="top" color="primary">
@@ -86,6 +108,6 @@ export default function Home() {
       <About></About>
       {/* Contact */}
       <ContactPage></ContactPage>
-    </div>
+    </motion.div>
   );
 }
