@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
+import { useRouter } from "next/router";
+
 const useStyle = makeStyles({
   tool: {
     paddingBottom: "5%",
@@ -68,7 +70,7 @@ export default function Works({ id }) {
   const target = works.find((key) => {
     return key.id === id;
   });
-
+  console.log(target);
   return (
     <Grid container>
       <Grid item>
