@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
 import { useRouter } from "next/router";
 
 const useStyle = makeStyles({
@@ -17,13 +16,14 @@ export async function getServerSideProps(context) {
   const { id } = context.query;
   // const res = await fetch("https://portfolio.chiori.tech/works/" + id);
   // const work = await res.json();
-
+  // console.log(id);
   return { props: { id } };
 }
 
 export default function Works({ id }) {
   const classes = useStyle();
-  // const params = useParams();
+  // const router = useRouter();
+  console.log(id);
 
   const works = [
     {
@@ -67,32 +67,32 @@ export default function Works({ id }) {
     },
   ];
   // const result = works.find((v) => v.id === id);
-  const target = works.find((key) => {
-    return key.id === id;
-  });
-  console.log(target);
+  // const target = works.find((key) => {
+  //   return key.id === id;
+  // });
+  // console.log(target);
   return (
     <Grid container>
       <Grid item>
         <Typography variant="h4" className={classes.tool}>
-          {target.title}
+          {works[0].title}
         </Typography>
         <Image
-          src={"/" + target.image}
+          src={"/" + works[0].image}
           width={600}
           height={400}
           className={classes.tool}
         ></Image>
 
         <Typography variant="body1" className={classes.tool}>
-          {target.details}
+          {works[0].details}
         </Typography>
 
         <Typography variant="h5" gutterBottom>
           Language
         </Typography>
         <Typography variant="h6" className={classes.tool}>
-          {target.language}
+          {works[0].language}
         </Typography>
         <Typography variant="h5" gutterBottom>
           Link
@@ -100,10 +100,10 @@ export default function Works({ id }) {
         <Link
           variant="h6"
           className={classes.tool}
-          href={target.link}
-          target="_blank"
+          href={works[0].link}
+          // target="_blank"
         >
-          {target.link}
+          {works[0].link}
         </Link>
       </Grid>
     </Grid>
