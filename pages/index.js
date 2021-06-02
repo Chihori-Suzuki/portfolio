@@ -55,7 +55,7 @@ const containerVariants = {
   },
   visible: {
     opacity: 1,
-    transition: { delay: 1.5, duration: 1.5 },
+    transition: { delay: 1.5, duration: 1.5, transform: "translate(0, 50px)" },
   },
   exit: {
     x: "-100vw",
@@ -64,15 +64,56 @@ const containerVariants = {
 };
 
 export default function Home() {
-  const [works, setWorks] = useState([]);
+  // const [works, setWorks] = useState([]);
   const classes = useStyle();
 
-  useEffect(() => {
-    fetch("http://localhost:8001/works")
-      .then((res) => res.json())
-      .then((data) => setWorks(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://portfolio.chiori.tech/works")
+  //     .then((res) => res.json())
+  //     .then((data) => setWorks(data));
+  // }, []);
 
+  const works = [
+    {
+      title: "Calorie and recipe",
+      details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      category: "iOS",
+      id: 1,
+      image: "flower1.jpg",
+      language: "Swift",
+      link: "https://github.com/Chihori-Suzuki/Recipe-and-Calorie-Manager-App",
+    },
+    {
+      title: "something project 2",
+      details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
+      category: "sss",
+      id: 2,
+      image: "view1.jpg",
+      language: "Javascript",
+      link: "https://github.com/Chihori-Suzuki",
+    },
+    {
+      title: "something project 3",
+      details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      category: "sss",
+      id: 3,
+      image: "flower2.jpg",
+      language: "Swift",
+      link: "https://github.com/Chihori-Suzuki",
+    },
+    {
+      title: "Portfolio",
+      details: "making portfolio",
+      category: "sss",
+      id: 4,
+      image: "view2.jpg",
+      language: "Swift",
+      link: "https://github.com/Chihori-Suzuki",
+    },
+  ];
   return (
     <motion.div
       className="base container"
