@@ -11,7 +11,7 @@ import WorkCards from "../comps/WorkCards";
 import ContactPage from "../comps/ContactPage";
 import About from "../comps/About";
 import { motion } from "framer-motion";
-import { works } from "..data/data";
+import { works } from "../data/data";
 import NavBar from "../comps/NavBar";
 
 const useStyle = makeStyles((theme) => {
