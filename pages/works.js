@@ -10,7 +10,7 @@ const useStyle = makeStyles({
   },
 });
 
-export const works = [
+const works = [
   {
     title: "Calorie and recipe",
     details:

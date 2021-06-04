@@ -91,7 +91,7 @@ const useStyle = makeStyles((theme) => {
   };
 });
 
-export const works = [
+const works = [
   {
     title: "Calorie and recipe",
     details:
