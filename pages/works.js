@@ -8,6 +8,11 @@ const useStyle = makeStyles({
   tool: {
     paddingBottom: "5%",
   },
+  paper: {
+    display: "fixed",
+    padding: "5%",
+    background: "rgba(61, 5, 96, 0.6)",
+  },
 });
 
 const works = [

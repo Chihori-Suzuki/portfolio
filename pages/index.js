@@ -12,6 +12,7 @@ import ContactPage from "../comps/ContactPage";
 import About from "../comps/About";
 import { motion } from "framer-motion";
 // import { works } from "./data";
+import NavBar from "../comps/NavBar";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -88,6 +89,12 @@ const useStyle = makeStyles((theme) => {
       paddingBottom: "10%",
       borderRadius: 0,
     },
+
+    backpaper: {
+      display: "fixed",
+      padding: "5%",
+      background: "rgba(61, 5, 96, 0.6)",
+    },
   };
 });
 
@@ -158,53 +165,66 @@ export default function Home() {
       animate="visible"
       exit="exit"
     >
-      {/* main */}
-      <Container className={classes.top}>
-        <h2 className={classes.typography} id="top" color="primary">
-          CHIORI SUZUKI
-        </h2>
-        <h5 className={classes.typography1} color="secondary">
-          Front-end developper
-        </h5>
-
-        <Typography variant="h6"></Typography>
-      </Container>
-      {/* Works */}
-      <Paper className={classes.paper}>
-        <Grid container direction="column" justify="center" alignItems="center">
-          <h2 className={classes.typography2} id="work">
-            WORKS
+      <Paper className={classes.backpaper}>
+        <NavBar />
+        {/* main */}
+        <Container className={classes.top}>
+          <h2 className={classes.typography} id="top" color="primary">
+            CHIORI SUZUKI
           </h2>
-          <Grid container spacing={8}>
-            {works.map((work) => (
-              <Grid item key={work.id} xs={12} md={12} lg={6}>
-                <WorkCards className={classes.card} work={work} />
-              </Grid>
-            ))}
+          <h5 className={classes.typography1} color="secondary">
+            Front-end developper
+          </h5>
+
+          <Typography variant="h6"></Typography>
+        </Container>
+        {/* Works */}
+        <Paper className={classes.paper}>
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <h2 className={classes.typography2} id="work">
+              WORKS
+            </h2>
+            <Grid container spacing={8}>
+              {works.map((work) => (
+                <Grid item key={work.id} xs={12} md={12} lg={6}>
+                  <WorkCards className={classes.card} work={work} />
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+        </Paper>
+        {/* About */}
+        <Paper className={classes.paper2}>
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <h2 className={classes.typography2} id="about">
+              ABOUT
+            </h2>
+            <About></About>
+          </Grid>
+        </Paper>
+        {/* Contact */}
+
+        <Grid container direction="column">
+          <Grid container justify="center">
+            <h2 className={classes.typography} id="contact">
+              CONTACT
+            </h2>
+          </Grid>
+          <Grid container justify="center">
+            <ContactPage></ContactPage>
           </Grid>
         </Grid>
       </Paper>
-      {/* About */}
-      <Paper className={classes.paper2}>
-        <Grid container direction="column" justify="center" alignItems="center">
-          <h2 className={classes.typography2} id="about">
-            ABOUT
-          </h2>
-          <About></About>
-        </Grid>
-      </Paper>
-      {/* Contact */}
-
-      <Grid container direction="column">
-        <Grid container justify="center">
-          <h2 className={classes.typography} id="contact">
-            CONTACT
-          </h2>
-        </Grid>
-        <Grid container justify="center">
-          <ContactPage></ContactPage>
-        </Grid>
-      </Grid>
     </motion.div>
   );
 }
