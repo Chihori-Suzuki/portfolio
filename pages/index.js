@@ -3,6 +3,7 @@ import {
   Container,
   Grid,
   makeStyles,
+  Paper,
   Typography,
 } from "@material-ui/core";
 import React from "react";
@@ -10,14 +11,14 @@ import WorkCards from "../comps/WorkCards";
 import ContactPage from "../comps/ContactPage";
 import About from "../comps/About";
 import { motion } from "framer-motion";
-import { works } from '../data/data'
+import { works } from "../data/data";
 
 const useStyle = makeStyles((theme) => {
   return {
     toolbar: theme.mixins.toolbar,
     top: {
-      marginTop: "25%",
-      marginBottom: "25%",
+      marginTop: "10%",
+      marginBottom: "30%",
       textAlign: "center",
     },
     card: {
@@ -27,24 +28,65 @@ const useStyle = makeStyles((theme) => {
       [theme.breakpoints.down("sm")]: {
         fontSize: "30px",
         fontWeight: "300",
+        color: "#EFC2FF",
       },
       [theme.breakpoints.up("sm")]: {
-        fontSize: "50px",
-        fontWeight: "350",
+        fontSize: "60px",
+        fontWeight: "400",
+        color: "#EFC2FF",
       },
     },
     typography1: {
       [theme.breakpoints.down("sm")]: {
         fontSize: "20px",
         fontWeight: "300",
+        color: "#FFFFFF",
       },
       [theme.breakpoints.up("sm")]: {
-        fontSize: "30px",
+        fontSize: "25px",
         fontWeight: "400",
+        color: "#FFFFFF",
       },
+    },
+    typography2: {
+      textAlign: "center",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "30px",
+        fontWeight: "300",
+        color: "#590477",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "60px",
+        fontWeight: "400",
+        color: "#590477",
+      },
+      padding: "5%",
     },
     grid: {
       margin: 30,
+    },
+
+    paper: {
+      display: "flex",
+      backgroundColor: "#FFFFFF",
+      // marginBottom: 0,
+      marginLeft: "calc(((100vw - 100%) / 2) * -1)",
+      marginRight: "calc(((100vw - 100%) / 2) * -1)",
+      paddingLeft: "20%",
+      paddingRight: "20%",
+      paddingBottom: "10%",
+      borderRadius: 0,
+    },
+    paper2: {
+      display: "flex",
+      backgroundColor: "#F9D2FF",
+      // marginTop: 0,
+      marginLeft: "calc(((100vw - 100%) / 2) * -1)",
+      marginRight: "calc(((100vw - 100%) / 2) * -1)",
+      paddingLeft: "20%",
+      paddingRight: "20%",
+      paddingBottom: "10%",
+      borderRadius: 0,
     },
   };
 });
@@ -55,7 +97,7 @@ const containerVariants = {
   },
   visible: {
     opacity: 1,
-    transition: { delay: 1.5, duration: 1.5, transform: "translate(0, 50px)" },
+    transition: { delay: 0.5, duration: 0.5, transform: "translate(0, 50px)" },
   },
   exit: {
     x: "-100vw",
@@ -65,7 +107,7 @@ const containerVariants = {
 
 export default function Home() {
   const classes = useStyle();
-  
+
   return (
     <motion.div
       className="base container"
@@ -76,31 +118,51 @@ export default function Home() {
     >
       {/* main */}
       <Container className={classes.top}>
-        <Typography className={classes.typography} id="top" color="primary">
-          Chiori Suzuki
-        </Typography>
-        <Typography className={classes.typography1} color="secondary">
-          Web developer
-        </Typography>
+        <h2 className={classes.typography} id="top" color="primary">
+          CHIORI SUZUKI
+        </h2>
+        <h5 className={classes.typography1} color="secondary">
+          Front-end developper
+        </h5>
+
         <Typography variant="h6"></Typography>
       </Container>
       {/* Works */}
-      <Box ml="3%" my="5%">
-        <Typography className={classes.typography} id="work" color="primary">
-          WORKS
-        </Typography>
-      </Box>
-      <Grid container spacing={5}>
-        {works.map((work) => (
-          <Grid item key={work.id} xs={12} md={12} lg={6}>
-            <WorkCards className={classes.card} work={work} />
+      <Paper className={classes.paper}>
+        <Grid container direction="column" justify="center" alignItems="center">
+          <h2 className={classes.typography2} id="work">
+            WORKS
+          </h2>
+          <Grid container spacing={8}>
+            {works.map((work) => (
+              <Grid item key={work.id} xs={12} md={12} lg={6}>
+                <WorkCards className={classes.card} work={work} />
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        </Grid>
+      </Paper>
       {/* About */}
-      <About></About>
+      <Paper className={classes.paper2}>
+        <Grid container direction="column" justify="center" alignItems="center">
+          <h2 className={classes.typography2} id="about">
+            ABOUT
+          </h2>
+          <About></About>
+        </Grid>
+      </Paper>
       {/* Contact */}
-      <ContactPage></ContactPage>
+
+      <Grid container direction="column">
+        <Grid container justify="center">
+          <h2 className={classes.typography} id="contact">
+            CONTACT
+          </h2>
+        </Grid>
+        <Grid container justify="center">
+          <ContactPage></ContactPage>
+        </Grid>
+      </Grid>
     </motion.div>
   );
 }

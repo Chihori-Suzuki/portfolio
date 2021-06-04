@@ -1,4 +1,10 @@
-import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -12,7 +18,8 @@ const useStyle = makeStyles((theme) => {
       color: purple[800],
     },
     grid: {
-      margin: 30,
+      marginTop: "10%",
+      // marginRight: 50,
     },
     box: {
       "&:hover": {
@@ -27,7 +34,7 @@ const useStyle = makeStyles((theme) => {
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "50px",
-        fontWeight: "350",
+        fontWeight: "500",
       },
     },
   };
@@ -85,56 +92,91 @@ export default function About() {
 
   const menuItems = [
     {
-      text: "Java",
+      text: "javascript",
       icon: stars.eval4,
     },
     {
-      text: "VB.NET",
+      text: "HTML",
       icon: stars.eval4,
     },
     {
-      text: "Objective-C",
-      icon: stars.eval2,
+      text: "CSS",
+      icon: stars.eval4,
     },
     {
-      text: "Swift",
+      text: "ReactJs",
       icon: stars.eval3,
     },
     {
-      text: "React",
-      icon: stars.eval4,
+      text: "Next.js",
+      icon: stars.eval3,
+    },
+    {
+      text: "jQuery",
+      icon: stars.eval3,
     },
     {
       text: "illustrator",
       icon: stars.eval3,
     },
   ];
+  const menuItems1 = [
+    {
+      text: "Java",
+      icon: stars.eval4,
+    },
+    {
+      text: "Visual Basic",
+      icon: stars.eval4,
+    },
+    {
+      text: "Swift",
+      icon: stars.eval3,
+    },
+    {
+      text: "Objective-C",
+      icon: stars.eval2,
+    },
+    {
+      text: "PosgreSQL",
+      icon: stars.eval4,
+    },
+    {
+      text: "OracleSQL",
+      icon: stars.eval3,
+    },
+  ];
 
   return (
-    <div>
-      <Box ml="3%" my="5%">
-        <Typography className={classes.typography} id="about" color="primary">
-          ABOUT
-        </Typography>
-      </Box>
-      <Grid container spacing={6}>
-        <Grid item md={6} sm={12} xs={12}>
-          <Image
-            src="/about.jpg"
-            alt="profile"
-            width={260}
-            height={323}
-            display="flex"
-          />
-          <Typography variant="body1">Chiori Suzuki</Typography>
-          <Typography>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book..{" "}
+    <Container>
+      <Grid
+        container
+        spacing={10}
+        direction="row"
+        alignItems="center"
+        justify="center"
+      >
+        <Image
+          src="/about.jpg"
+          alt="profile"
+          width={150}
+          height={150}
+          display="flex"
+        />
+        <Box width={450} ml={5} mb={10}>
+          <Typography variant="h6">ChIORI SUZUKI</Typography>
+          <Typography variant="body1" word>
+            I am a junior programmer with knowledge of front-end techniques.
+            <br />I like studying new technology and improving my skills. I like
+            working with team and helping others.{" "}
           </Typography>
-        </Grid>
-        <Grid item md={6} sm={12} xs={12}>
+        </Box>
+      </Grid>
+      <Grid container mt={20} justify="center">
+        <Typography variant="h5">SKILLS</Typography>
+      </Grid>
+      <Grid container spacing={10} className={classes.grid}>
+        <Grid item md={6}>
           {menuItems.map((item) => (
             <Box
               className={classes.box}
@@ -151,7 +193,24 @@ export default function About() {
             </Box>
           ))}
         </Grid>
+        <Grid item md={6}>
+          {menuItems1.map((item) => (
+            <Box
+              className={classes.box}
+              key={item.text}
+              display="flex"
+              flexDirection="row"
+            >
+              <Box flexGrow={1} mb={1}>
+                <Typography variant="body1" gutterBottom>
+                  {item.text}
+                </Typography>
+              </Box>
+              {item.icon}
+            </Box>
+          ))}
+        </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 }

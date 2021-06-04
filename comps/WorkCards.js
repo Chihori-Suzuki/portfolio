@@ -5,6 +5,7 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  Paper,
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
@@ -19,17 +20,14 @@ const useStyle = makeStyles((theme) => {
       display: "flex",
     },
     box: {
-      [theme.breakpoints.down("sm")]: {
-        display: "flex",
-        flexDirection: "column",
-      },
-      [theme.breakpoints.up("sm")]: {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-      },
+      display: "flex",
+      flexDirection: "column",
+      // [theme.breakpoints.up("sm")]: {
+      //   display: "flex",
+      //   flexDirection: "row",
+      //   alignItems: "center",
+      // },
     },
-    content: {},
   };
 });
 
@@ -43,7 +41,7 @@ export default function WorkCard({ work }) {
             <CardMedia
               component="img"
               image={work.image}
-              height={200}
+              height={400}
               title={work.image}
             />
             <CardContent>

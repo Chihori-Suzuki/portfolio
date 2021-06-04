@@ -24,7 +24,7 @@ export default function MyApp(props) {
   return (
     <CacheProvider value={cache}>
       <Head>
-        <title>My page</title>
+        <title>Chiori Suzuki - Web Developer</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>

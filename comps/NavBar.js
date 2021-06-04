@@ -1,8 +1,6 @@
-import Typography from "@material-ui/core/Typography";
 import Image from "next/image";
 import { Link } from "@material-ui/core";
-import { AppBar, Box, makeStyles, Toolbar, Button } from "@material-ui/core";
-import { AnimatePresence, motion } from "framer-motion";
+import { AppBar, makeStyles, Toolbar, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -25,12 +23,13 @@ const useStyles = makeStyles((theme) => {
       },
     },
     textColor: {
+      marginLeft: 15,
       color: "white",
       [theme.breakpoints.down("sm")]: {
         fontSize: "10px",
       },
       [theme.breakpoints.up("sm")]: {
-        fontSize: "15px",
+        fontSize: "20px",
       },
     },
   };
@@ -46,41 +45,30 @@ export default function Navbar() {
       style={{ background: "transparent" }}
     >
       <Toolbar>
-        <div className={classes.logo}>
+        <Grid container justify="flex-end">
+          {/* <div className={classes.logo}>
           <Button href="/">
             <Image src="/cat_icon.png" alt="site logo" width={77} height={77} />
           </Button>{" "}
-        </div>
-        <Button
+        </div> */}
+          {/* <Button
           className={classes.link}
           activeClass="active"
           offset={-70}
           duration={500}
-        >
+        > */}
+
           <Link className={classes.textColor} href="/#work">
             WORKS
           </Link>
-        </Button>
-        <Button
-          className={classes.link}
-          activeClass="active"
-          offset={-70}
-          duration={500}
-        >
+          {/* </Button> */}
           <Link className={classes.textColor} href="/#about">
             ABOUT
           </Link>
-        </Button>
-        <Button
-          className={classes.link}
-          activeClass="active"
-          offset={-70}
-          duration={500}
-        >
           <Link className={classes.textColor} href="/#contact">
             CONTACTS
           </Link>
-        </Button>
+        </Grid>
       </Toolbar>
     </AppBar>
   );

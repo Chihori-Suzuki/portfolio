@@ -1,5 +1,5 @@
 @import "@fontsource/roboto";
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400&display=swap");
 body {
   /* background: floralwhite; */
   background-image: url("../public/background.jpg");
@@ -8,11 +8,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-/* a {
-  color: F3D1D0;
-  text-decoration: none;
-} */
 
 nav {
   margin: 30px;
@@ -29,4 +24,14 @@ nav a {
 
 nav .top-title {
   margin-right: auto;
+}
+
+h2 {
+  font-family: "Lato";
+  color: rgb(162, 49, 207);
+}
+
+h5 {
+  font-family: "Lato";
+  color: rgb(44, 44, 44);
 }
