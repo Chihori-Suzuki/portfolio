@@ -2,16 +2,17 @@ import {
   Box,
   Container,
   Grid,
+  IconButton,
   makeStyles,
   Paper,
   Typography,
 } from "@material-ui/core";
 import React from "react";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import StarIcon from "@material-ui/icons/Star";
-import { pink, purple } from "@material-ui/core/colors";
-import ContactPage from "../comps/ContactPage";
+import { purple } from "@material-ui/core/colors";
+import AttachFileIcon from "@material-ui/icons/AttachFile";
+import { Link } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -36,10 +37,11 @@ const useStyle = makeStyles((theme) => {
     },
     paper: {
       background: "transparent",
-      paddingBottom: "10%",
+      paddingBottom: "5%",
     },
 
     subtitle: {
+      marginTop: "7%",
       [theme.breakpoints.down("sm")]: {
         fontSize: "20px",
         fontWeight: "300",
@@ -195,6 +197,14 @@ export default function About() {
                 like working with team and helping others.{" "}
               </Typography>
             </Grid>
+            <Grid item>
+              <Grid container direction="row" alignItems="center">
+                <Typography className={classes.body}>Resume →</Typography>
+                <IconButton href="https://docs.google.com/document/d/1F6HlSVoRvYumw4qBXB2mdEoUILgeqnldwH_a1OxsTXU/edit?usp=sharing">
+                  <AttachFileIcon />
+                </IconButton>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Paper>
@@ -236,6 +246,67 @@ export default function About() {
                 {item.icon}
               </Box>
             ))}
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid container spacing={5}>
+        <Grid item xs={12} container justify="center">
+          <Typography className={classes.subtitle}>EDUCATIONS</Typography>
+        </Grid>
+        <Grid item xs={12} container>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h6">
+              Shibaura Institute of Technology
+            </Typography>
+            <Typography variant="body2">Apr 2012 - Mar 2016</Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="subtitle2">
+              Engineering and Design　Robotics and Information Design Course
+            </Typography>
+            <Typography variant="body2">
+              Learn up to date production technologies along with the
+              methodologies and process for product design. <br />
+              Laboratory: Software Design Laboratory
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} container>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h6">
+              Cornerstone International Community <br />
+              College of Canada
+            </Typography>
+            <Typography variant="body2">Apr 2020 - expected 2022</Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="subtitle2">
+              Web Design and Mobile Application Development Diploma Program
+            </Typography>
+            <Typography variant="body2">
+              Practicing web design skills with HTML, CSS, JavaScript framework
+              courses are designed for web programrming. Learning Java, Android,
+              and Swift languages are another option for mobile app development.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid container spacing={5}>
+        <Grid item xs={12} container justify="center">
+          <Typography className={classes.subtitle}>CAREER</Typography>
+        </Grid>
+        <Grid item xs={12} container>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h6">NEC Solution Inovator Inc</Typography>
+            <Typography variant="body2">Apr 2012 - Mar 2016</Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="subtitle2">Software Developer</Typography>
+            <Typography variant="body2">
+              Designed, developped, tested the POS system to validate the data
+              and the functions. Updated the functions in response to customer's
+              requirments.
+            </Typography>
           </Grid>
         </Grid>
       </Grid>

@@ -1,5 +1,4 @@
 import {
-  Box,
   Container,
   Grid,
   makeStyles,
@@ -190,6 +189,7 @@ export default function Home() {
           container
           direction="column"
           justify="center"
+          baura
           className={classes.gridContact}
         >
           <h2 className={classes.typography} id="contact">
