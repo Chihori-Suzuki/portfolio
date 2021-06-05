@@ -200,7 +200,11 @@ export default function About() {
             <Grid item>
               <Grid container direction="row" alignItems="center">
                 <Typography className={classes.body}>Resume →</Typography>
-                <IconButton href="https://docs.google.com/document/d/1F6HlSVoRvYumw4qBXB2mdEoUILgeqnldwH_a1OxsTXU/edit?usp=sharing">
+                <IconButton
+                  href="https://docs.google.com/document/d/1F6HlSVoRvYumw4qBXB2mdEoUILgeqnldwH_a1OxsTXU/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <AttachFileIcon />
                 </IconButton>
               </Grid>
