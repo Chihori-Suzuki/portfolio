@@ -12,7 +12,7 @@ import Image from "next/image";
 import StarIcon from "@material-ui/icons/Star";
 import { purple } from "@material-ui/core/colors";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
-import { Link } from "react-router-dom";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -60,6 +60,9 @@ const useStyle = makeStyles((theme) => {
         fontSize: "17px",
         fontWeight: "300",
       },
+    },
+    location: {
+      marginTop: "3%",
     },
   };
 });
@@ -263,6 +266,16 @@ export default function About() {
               Shibaura Institute of Technology
             </Typography>
             <Typography variant="body2">Apr 2012 - Mar 2016</Typography>
+            <Grid
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="center"
+              className={classes.location}
+            >
+              <LocationOnIcon />
+              <Typography variant="body2">Tokyo</Typography>
+            </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2">
@@ -282,6 +295,16 @@ export default function About() {
               College of Canada
             </Typography>
             <Typography variant="body2">Apr 2020 - expected 2022</Typography>
+            <Grid
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="center"
+              className={classes.location}
+            >
+              <LocationOnIcon />
+              <Typography variant="body2">Vancouver</Typography>
+            </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2">
@@ -303,6 +326,16 @@ export default function About() {
           <Grid item xs={12} md={6}>
             <Typography variant="h6">NEC Solution Inovator Inc</Typography>
             <Typography variant="body2">Apr 2012 - Mar 2016</Typography>
+            <Grid
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="center"
+              className={classes.location}
+            >
+              <LocationOnIcon />
+              <Typography variant="body2">Tokyo</Typography>
+            </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2">Software Developer</Typography>
