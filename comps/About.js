@@ -36,7 +36,28 @@ const useStyle = makeStyles((theme) => {
     },
     paper: {
       background: "transparent",
-      paddingBottom: "5%",
+      paddingBottom: "10%",
+    },
+
+    subtitle: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "20px",
+        fontWeight: "300",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "30px",
+        fontWeight: "200",
+      },
+    },
+    body: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "14px",
+        fontWeight: "300",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "17px",
+        fontWeight: "300",
+      },
     },
   };
 });
@@ -152,21 +173,23 @@ export default function About() {
     <Container>
       <Paper className={classes.paper} elevation={0}>
         <Grid container spacing={2}>
-          <Grid item>
+          <Grid item sm={12} md={6} container justify="center">
             <Image
               src="/profile.png"
               alt="profile"
-              width={150}
-              height={150}
+              width={200}
+              height={200}
               // display="flex"
             />
           </Grid>
-          <Grid item xs={12} sm={12} sm container>
+          <Grid item sm={12} md={6} sm container>
             <Grid item>
-              <Typography variant="h5">CHIORI SUZUKI</Typography>
+              <Typography className={classes.subtitle}>
+                CHIORI SUZUKI
+              </Typography>
             </Grid>
             <Grid item>
-              <Typography variant="body1" word>
+              <Typography className={classes.body} word>
                 I am a junior programmer with knowledge of front-end techniques.
                 <br />I like studying new technology and improving my skills. I
                 like working with team and helping others.{" "}
@@ -177,10 +200,10 @@ export default function About() {
       </Paper>
       <Grid container spacing={5}>
         <Grid item xs={12} container justify="center">
-          <Typography variant="h5">SKILLS</Typography>
+          <Typography className={classes.subtitle}>SKILLS</Typography>
         </Grid>
         <Grid item container spacing={10}>
-          <Grid item md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             {menuItems.map((item) => (
               <Box
                 className={classes.box}
@@ -189,7 +212,7 @@ export default function About() {
                 flexDirection="row"
               >
                 <Box flexGrow={1} mb={1}>
-                  <Typography variant="body1" gutterBottom>
+                  <Typography className={classes.body} gutterBottom>
                     {item.text}
                   </Typography>
                 </Box>
@@ -197,7 +220,7 @@ export default function About() {
               </Box>
             ))}
           </Grid>
-          <Grid item md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             {menuItems1.map((item) => (
               <Box
                 className={classes.box}
@@ -206,7 +229,7 @@ export default function About() {
                 flexDirection="row"
               >
                 <Box flexGrow={1} mb={1}>
-                  <Typography variant="body1" gutterBottom>
+                  <Typography className={classes.body} gutterBottom>
                     {item.text}
                   </Typography>
                 </Box>

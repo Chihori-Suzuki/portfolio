@@ -9,6 +9,11 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+/* div.baseComponent {
+  background-image: url("../public/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+} */
 nav {
   margin: 30px;
   padding: 10px 0;

@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Link } from "@material-ui/core";
+// import { Link } from "@material-ui/core";
 import { AppBar, makeStyles, Toolbar, Grid } from "@material-ui/core";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -46,26 +47,32 @@ export default function Navbar() {
     >
       <Toolbar>
         <Grid container justify="flex-end">
-          {/* <div className={classes.logo}>
-          <Button href="/">
-            <Image src="/cat_icon.png" alt="site logo" width={77} height={77} />
-          </Button>{" "}
-        </div> */}
-          {/* <Button
-          className={classes.link}
-          activeClass="active"
-          offset={-70}
-          duration={500}
-        > */}
-
-          <Link className={classes.textColor} href="/#work">
+          <Link
+            className={classes.textColor}
+            to="work"
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             WORKS
           </Link>
           {/* </Button> */}
-          <Link className={classes.textColor} href="/#about">
+          <Link
+            className={classes.textColor}
+            to="about"
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             ABOUT
           </Link>
-          <Link className={classes.textColor} href="/#contact">
+          <Link
+            className={classes.textColor}
+            to="contact"
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             CONTACTS
           </Link>
         </Grid>

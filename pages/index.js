@@ -73,20 +73,32 @@ const useStyle = makeStyles((theme) => {
       // marginBottom: 0,
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
-      paddingLeft: "20%",
-      paddingRight: "20%",
-      paddingBottom: "10%",
       borderRadius: 0,
+      paddingBottom: "10%",
+      [theme.breakpoints.down("sm")]: {
+        paddingLeft: "10%",
+        paddingRight: "10%",
+      },
+      [theme.breakpoints.up("sm")]: {
+        paddingLeft: "25%",
+        paddingRight: "25%",
+      },
     },
     paper2: {
       display: "flex",
       backgroundColor: "#F1E7FF",
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
-      paddingLeft: "20%",
-      paddingRight: "20%",
-      paddingBottom: "10%",
       borderRadius: 0,
+      paddingBottom: "10%",
+      [theme.breakpoints.down("sm")]: {
+        paddingLeft: "10%",
+        paddingRight: "10%",
+      },
+      [theme.breakpoints.up("sm")]: {
+        paddingLeft: "25%",
+        paddingRight: "25%",
+      },
     },
 
     backpaper: {
@@ -115,14 +127,14 @@ export default function Home() {
   const classes = useStyle();
 
   return (
-    <motion.div
-      className="base container"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-    >
-      <Paper className={classes.backpaper}>
+    <Paper className={classes.backpaper}>
+      <motion.div
+        className="baseComponent"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
         <NavBar />
         {/* main */}
         <Container className={classes.top}>
@@ -181,7 +193,7 @@ export default function Home() {
             <ContactPage></ContactPage>
           </Grid>
         </Grid>
-      </Paper>
-    </motion.div>
+      </motion.div>
+    </Paper>
   );
 }
