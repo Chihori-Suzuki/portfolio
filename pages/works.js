@@ -80,6 +80,16 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "350",
       },
     },
+    body3: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "15px",
+        fontWeight: "300",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "20px",
+        fontWeight: "350",
+      },
+    },
   };
 });
 
@@ -127,7 +137,7 @@ export default function Works({ id }) {
           </Typography>
         </Box>
         <Typography variant="h5" className={classes.subtitle}>
-          Language
+          Language, Software
         </Typography>
         <Typography variant="h6" gutterBottom className={classes.body2}>
           {works[id].language}
@@ -139,7 +149,8 @@ export default function Works({ id }) {
           variant="h6"
           href={works[id].link}
           target="_blank"
-          className={classes.body2}
+          className={classes.body3}
+          color="#000000"
         >
           {works[id].link}
         </Link>

@@ -6,7 +6,7 @@ export const works = [
     category: "iOS",
     id: 0,
     image: "/recipe-image.png",
-    language: "Swift",
+    language: "Swift, GitHub",
     link: "https://github.com/Chihori-Suzuki/Recipe-and-Calorie-Manager-App",
   },
   {
