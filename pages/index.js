@@ -63,8 +63,11 @@ const useStyle = makeStyles((theme) => {
       },
       padding: "5%",
     },
-    grid: {
-      margin: 30,
+    gridContact: {
+      // margin: 30,
+      marginTop: "10%",
+      marginBottom: "10%",
+      textAlign: "center",
     },
 
     paper: {
@@ -183,15 +186,16 @@ export default function Home() {
         </Paper>
         {/* Contact */}
 
-        <Grid container direction="column">
-          <Grid container justify="center">
-            <h2 className={classes.typography} id="contact">
-              CONTACT
-            </h2>
-          </Grid>
-          <Grid container justify="center">
-            <ContactPage></ContactPage>
-          </Grid>
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          className={classes.gridContact}
+        >
+          <h2 className={classes.typography} id="contact">
+            CONTACT
+          </h2>
+          <ContactPage></ContactPage>
         </Grid>
       </motion.div>
     </Paper>
