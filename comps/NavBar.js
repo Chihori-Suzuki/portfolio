@@ -14,17 +14,12 @@ const useStyles = makeStyles((theme) => {
     logo: {
       flexGrow: 1,
     },
-    link: {
-      color: "white",
-      background: "linear-gradient(to right bottom, #430089, #fc9dff)",
-      marginLeft: 15,
-      padding: 10,
+    textColor: {
       "&:hover": {
         background: "linear-gradient(to right bottom, #9BA8FC, #F2BEE4)",
       },
-    },
-    textColor: {
       marginLeft: 15,
+      padding: "1%",
       color: "white",
       [theme.breakpoints.down("sm")]: {
         fontSize: "10px",
