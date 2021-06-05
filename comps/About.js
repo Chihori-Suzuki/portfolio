@@ -3,6 +3,7 @@ import {
   Container,
   Grid,
   makeStyles,
+  Paper,
   Typography,
 } from "@material-ui/core";
 import React from "react";
@@ -16,10 +17,6 @@ const useStyle = makeStyles((theme) => {
   return {
     text: {
       color: purple[800],
-    },
-    grid: {
-      marginTop: "10%",
-      // marginRight: 50,
     },
     box: {
       "&:hover": {
@@ -36,6 +33,10 @@ const useStyle = makeStyles((theme) => {
         fontSize: "50px",
         fontWeight: "500",
       },
+    },
+    paper: {
+      background: "transparent",
+      paddingBottom: "5%",
     },
   };
 });
@@ -149,66 +150,70 @@ export default function About() {
 
   return (
     <Container>
-      <Grid
-        container
-        spacing={10}
-        direction="row"
-        alignItems="center"
-        justify="center"
-      >
-        <Image
-          src="/about.jpg"
-          alt="profile"
-          width={150}
-          height={150}
-          display="flex"
-        />
-        <Box width={450} ml={5} mb={10}>
-          <Typography variant="h6">ChIORI SUZUKI</Typography>
-          <Typography variant="body1" word>
-            I am a junior programmer with knowledge of front-end techniques.
-            <br />I like studying new technology and improving my skills. I like
-            working with team and helping others.{" "}
-          </Typography>
-        </Box>
-      </Grid>
-      <Grid container mt={20} justify="center">
-        <Typography variant="h5">SKILLS</Typography>
-      </Grid>
-      <Grid container spacing={10} className={classes.grid}>
-        <Grid item md={6}>
-          {menuItems.map((item) => (
-            <Box
-              className={classes.box}
-              key={item.text}
-              display="flex"
-              flexDirection="row"
-            >
-              <Box flexGrow={1} mb={1}>
-                <Typography variant="body1" gutterBottom>
-                  {item.text}
-                </Typography>
-              </Box>
-              {item.icon}
-            </Box>
-          ))}
+      <Paper className={classes.paper} elevation={0}>
+        <Grid container spacing={2}>
+          <Grid item>
+            <Image
+              src="/profile.png"
+              alt="profile"
+              width={150}
+              height={150}
+              // display="flex"
+            />
+          </Grid>
+          <Grid item xs={12} sm={12} sm container>
+            <Grid item>
+              <Typography variant="h5">CHIORI SUZUKI</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" word>
+                I am a junior programmer with knowledge of front-end techniques.
+                <br />I like studying new technology and improving my skills. I
+                like working with team and helping others.{" "}
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item md={6}>
-          {menuItems1.map((item) => (
-            <Box
-              className={classes.box}
-              key={item.text}
-              display="flex"
-              flexDirection="row"
-            >
-              <Box flexGrow={1} mb={1}>
-                <Typography variant="body1" gutterBottom>
-                  {item.text}
-                </Typography>
+      </Paper>
+      <Grid container spacing={5}>
+        <Grid item xs={12} container justify="center">
+          <Typography variant="h5">SKILLS</Typography>
+        </Grid>
+        <Grid item container spacing={10}>
+          <Grid item md={6}>
+            {menuItems.map((item) => (
+              <Box
+                className={classes.box}
+                key={item.text}
+                display="flex"
+                flexDirection="row"
+              >
+                <Box flexGrow={1} mb={1}>
+                  <Typography variant="body1" gutterBottom>
+                    {item.text}
+                  </Typography>
+                </Box>
+                {item.icon}
               </Box>
-              {item.icon}
-            </Box>
-          ))}
+            ))}
+          </Grid>
+          <Grid item md={6}>
+            {menuItems1.map((item) => (
+              <Box
+                className={classes.box}
+                key={item.text}
+                display="flex"
+                flexDirection="row"
+              >
+                <Box flexGrow={1} mb={1}>
+                  <Typography variant="body1" gutterBottom>
+                    {item.text}
+                  </Typography>
+                </Box>
+                {item.icon}
+              </Box>
+            ))}
+          </Grid>
         </Grid>
       </Grid>
     </Container>

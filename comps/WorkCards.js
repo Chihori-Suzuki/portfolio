@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
+// import Image from "react-image-resizer";
+import Image from "next/image";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -41,9 +43,11 @@ export default function WorkCard({ work }) {
             <CardMedia
               component="img"
               image={work.image}
-              height={400}
+              height={300}
               title={work.image}
-            />
+            >
+              {/* <Image src={work.image} height={350} width={600}></Image> */}
+            </CardMedia>
             <CardContent>
               <Typography gutterBottom variant="h5">
                 {work.title}

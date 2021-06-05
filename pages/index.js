@@ -80,8 +80,7 @@ const useStyle = makeStyles((theme) => {
     },
     paper2: {
       display: "flex",
-      backgroundColor: "#F9D2FF",
-      // marginTop: 0,
+      backgroundColor: "#F1E7FF",
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       paddingLeft: "20%",
