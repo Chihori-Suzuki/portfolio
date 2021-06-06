@@ -48,7 +48,7 @@ const useStyle = makeStyles((theme) => {
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "30px",
-        fontWeight: "200",
+        fontWeight: "400",
       },
     },
     body: {
@@ -58,11 +58,23 @@ const useStyle = makeStyles((theme) => {
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "17px",
+        fontWeight: "350",
+      },
+    },
+    body2: {
+      marginTop: "3%",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "12px",
         fontWeight: "300",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "15px",
+        fontWeight: "350",
       },
     },
     location: {
       marginTop: "3%",
+      marginBottom: "3%",
     },
   };
 });
@@ -182,9 +194,9 @@ export default function About() {
             <Image
               src="/profile.png"
               alt="profile"
-              width={200}
-              height={200}
-              // display="flex"
+              width={220}
+              height={220}
+              layout="fixed"
             />
           </Grid>
           <Grid item sm={12} md={6} sm container>
@@ -265,7 +277,9 @@ export default function About() {
             <Typography variant="h6">
               Shibaura Institute of Technology
             </Typography>
-            <Typography variant="body2">Apr 2012 - Mar 2016</Typography>
+            <Typography className={classes.body2}>
+              Apr 2012 - Mar 2016
+            </Typography>
             <Grid
               container
               direction="row"
@@ -281,7 +295,7 @@ export default function About() {
             <Typography variant="subtitle2">
               Engineering and Design　Robotics and Information Design Course
             </Typography>
-            <Typography variant="body2">
+            <Typography className={classes.body2}>
               Learn up to date production technologies along with the
               methodologies and process for product design. <br />
               Laboratory: Software Design Laboratory
@@ -291,10 +305,11 @@ export default function About() {
         <Grid item xs={12} container>
           <Grid item xs={12} md={6}>
             <Typography variant="h6">
-              Cornerstone International Community <br />
-              College of Canada
+              Cornerstone International Community College of Canada
             </Typography>
-            <Typography variant="body2">Apr 2020 - expected 2022</Typography>
+            <Typography className={classes.body2}>
+              Apr 2020 - expected 2022
+            </Typography>
             <Grid
               container
               direction="row"
@@ -310,7 +325,7 @@ export default function About() {
             <Typography variant="subtitle2">
               Web Design and Mobile Application Development Diploma Program
             </Typography>
-            <Typography variant="body2">
+            <Typography className={classes.body2}>
               Practicing web design skills with HTML, CSS, JavaScript framework
               courses are designed for web programrming. Learning Java, Android,
               and Swift languages are another option for mobile app development.
@@ -325,7 +340,9 @@ export default function About() {
         <Grid item xs={12} container>
           <Grid item xs={12} md={6}>
             <Typography variant="h6">NEC Solution Inovator Inc</Typography>
-            <Typography variant="body2">Apr 2012 - Mar 2016</Typography>
+            <Typography className={classes.body2}>
+              Apr 2012 - Mar 2016
+            </Typography>
             <Grid
               container
               direction="row"
@@ -339,7 +356,7 @@ export default function About() {
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2">Software Developer</Typography>
-            <Typography variant="body2">
+            <Typography className={classes.body2}>
               Designed, developped, tested the POS system to validate the data
               and the functions. Updated the functions in response to customer's
               requirments.

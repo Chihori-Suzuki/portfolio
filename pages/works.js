@@ -33,6 +33,9 @@ const useStyle = makeStyles((theme) => {
       marginLeft: 15,
       color: "black",
       fontSize: "20px",
+      "&:hover": {
+        background: "linear-gradient(to right bottom, #9BA8FC, #F2BEE4)",
+      },
     },
     typography2: {
       textAlign: "center",
