@@ -30,7 +30,8 @@ const useStyle = makeStyles((theme) => {
       paddingLeft: "5%",
     },
     textColor: {
-      marginLeft: 15,
+      marginLeft: "3%",
+      padding: "1%",
       color: "black",
       fontSize: "20px",
       "&:hover": {
