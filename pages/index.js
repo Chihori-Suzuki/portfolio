@@ -144,7 +144,7 @@ export default function Home() {
             CHIORI SUZUKI
           </h2>
           <h5 className={classes.typography1} color="secondary">
-            Front-end developper
+            Front-end developer
           </h5>
 
           <Typography variant="h6"></Typography>
