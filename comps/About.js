@@ -216,7 +216,7 @@ export default function About() {
               <Grid container direction="row" alignItems="center">
                 <Typography className={classes.body}>Resume →</Typography>
                 <IconButton
-                  href="https://docs.google.com/document/d/1F6HlSVoRvYumw4qBXB2mdEoUILgeqnldwH_a1OxsTXU/edit?usp=sharing"
+                  href="https://docs.google.com/document/d/1OY4mQ-DNwx0jMUJ1YcSPo5lcgC__xCBRDuwXs4O_clY/edit"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
