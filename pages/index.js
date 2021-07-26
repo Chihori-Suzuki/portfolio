@@ -63,7 +63,6 @@ const useStyle = makeStyles((theme) => {
       padding: "5%",
     },
     gridContact: {
-      // margin: 30,
       marginTop: "10%",
       marginBottom: "10%",
       textAlign: "center",
@@ -72,7 +71,6 @@ const useStyle = makeStyles((theme) => {
     paper: {
       display: "flex",
       backgroundColor: "#FFFFFF",
-      // marginBottom: 0,
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
@@ -144,7 +142,7 @@ export default function Home() {
             CHIORI SUZUKI
           </h2>
           <h5 className={classes.typography1} color="secondary">
-            Front-end developer
+            Front-end developer / Software Engineer
           </h5>
 
           <Typography variant="h6"></Typography>
