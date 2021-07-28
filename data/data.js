@@ -17,6 +17,6 @@ export const works = [
     id: 1,
     image: "/view1.jpg",
     language: "Javascript/HTML/CSS",
-    link: "https://github.com/Chihori-Suzuki/LaFontaine-portfolio",
+    link: "https://lafontaine-web-36a6f.web.app/",
   },
 ];
