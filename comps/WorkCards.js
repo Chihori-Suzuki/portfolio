@@ -3,15 +3,11 @@ import {
   Card,
   CardActionArea,
   CardContent,
-  CardHeader,
   CardMedia,
-  Paper,
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
-// import Image from "react-image-resizer";
-import Image from "next/image";
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -24,11 +20,6 @@ const useStyle = makeStyles((theme) => {
     box: {
       display: "flex",
       flexDirection: "column",
-      // [theme.breakpoints.up("sm")]: {
-      //   display: "flex",
-      //   flexDirection: "row",
-      //   alignItems: "center",
-      // },
     },
   };
 });
@@ -45,9 +36,7 @@ export default function WorkCard({ work }) {
               image={work.image}
               height={300}
               title={work.image}
-            >
-              {/* <Image src={work.image} height={350} width={600}></Image> */}
-            </CardMedia>
+            ></CardMedia>
             <CardContent>
               <Typography gutterBottom variant="h5">
                 {work.title}
