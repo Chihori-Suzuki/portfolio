@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import { Link } from "@material-ui/core";
 import { AppBar, makeStyles, Toolbar, Grid } from "@material-ui/core";
 import { Link, animateScroll as scroll } from "react-scroll";
 
@@ -51,7 +50,6 @@ export default function Navbar() {
           >
             WORKS
           </Link>
-          {/* </Button> */}
           <Link
             className={classes.textColor}
             to="about"

@@ -1,11 +1,4 @@
-import {
-  makeStyles,
-  Box,
-  Grid,
-  IconButton,
-  Typography,
-  SvgIcon,
-} from "@material-ui/core";
+import { makeStyles, Grid, IconButton } from "@material-ui/core";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import EmailIcon from "@material-ui/icons/Email";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -47,7 +40,7 @@ export default function ContactPage() {
   const classes = useStyle();
 
   return (
-    <Grid container justify="center" alignItems="center">
+    <Grid container justify="center" alignItems="center" data-aos="fade-up">
       <IconButton
         href="https://www.instagram.com/chihhorin/"
         target="_blank"

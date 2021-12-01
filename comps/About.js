@@ -190,7 +190,14 @@ export default function About() {
     <Container>
       <Paper className={classes.paper} elevation={0}>
         <Grid container spacing={2}>
-          <Grid item sm={12} md={6} container justify="center">
+          <Grid
+            item
+            sm={12}
+            md={6}
+            container
+            justify="center"
+            data-aos="fade-up"
+          >
             <Image
               src="/profile.png"
               alt="profile"
@@ -199,7 +206,7 @@ export default function About() {
               layout="fixed"
             />
           </Grid>
-          <Grid item sm={12} md={6} sm container>
+          <Grid item sm={12} md={6} sm container data-aos="fade-up">
             <Grid item>
               <Typography className={classes.subtitle}>
                 CHIORI SUZUKI
@@ -216,7 +223,7 @@ export default function About() {
               <Grid container direction="row" alignItems="center">
                 <Typography className={classes.body}>Resume →</Typography>
                 <IconButton
-                  href="https://docs.google.com/document/d/1OY4mQ-DNwx0jMUJ1YcSPo5lcgC__xCBRDuwXs4O_clY/edit"
+                  href="https://docs.google.com/document/d/1qcXhFF9GeD5I0hNwCzPOoyjpbZ3PMbE175JnriOuaTM/edit"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -227,7 +234,7 @@ export default function About() {
           </Grid>
         </Grid>
       </Paper>
-      <Grid container spacing={5}>
+      <Grid container spacing={5} data-aos="fade-up">
         <Grid item xs={12} container justify="center">
           <Typography className={classes.subtitle}>SKILLS</Typography>
         </Grid>
@@ -249,7 +256,7 @@ export default function About() {
               </Box>
             ))}
           </Grid>
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={6} data-aos="fade-up">
             {menuItems1.map((item) => (
               <Box
                 className={classes.box}
@@ -269,11 +276,11 @@ export default function About() {
         </Grid>
       </Grid>
       <Grid container spacing={5}>
-        <Grid item xs={12} container justify="center">
+        <Grid item xs={12} container justify="center" data-aos="fade-up">
           <Typography className={classes.subtitle}>EDUCATIONS</Typography>
         </Grid>
         <Grid item xs={12} container>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} data-aos="fade-up">
             <Typography variant="h6">
               Shibaura Institute of Technology
             </Typography>
@@ -291,7 +298,7 @@ export default function About() {
               <Typography variant="body2">Tokyo</Typography>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} data-aos="fade-up">
             <Typography variant="subtitle2">
               Engineering and Design　Robotics and Information Design Course
             </Typography>
@@ -303,7 +310,7 @@ export default function About() {
           </Grid>
         </Grid>
         <Grid item xs={12} container>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} data-aos="fade-up">
             <Typography variant="h6">
               Cornerstone International Community College of Canada
             </Typography>
@@ -321,7 +328,7 @@ export default function About() {
               <Typography variant="body2">Vancouver</Typography>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} data-aos="fade-up">
             <Typography variant="subtitle2">
               Web Design and Mobile Application Development Diploma Program
             </Typography>
@@ -335,9 +342,11 @@ export default function About() {
       </Grid>
       <Grid container spacing={5}>
         <Grid item xs={12} container justify="center">
-          <Typography className={classes.subtitle}>CAREER</Typography>
+          <Typography className={classes.subtitle} data-aos="fade-up">
+            CAREER
+          </Typography>
         </Grid>
-        <Grid item xs={12} container>
+        <Grid item xs={12} container data-aos="fade-up">
           <Grid item xs={12} md={6}>
             <Typography variant="h6">NEC Solution Inovator Inc</Typography>
             <Typography className={classes.body2}>
