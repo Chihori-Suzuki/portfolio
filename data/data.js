@@ -19,4 +19,13 @@ export const works = [
     language: "Javascript/HTML/CSS",
     link: "https://lafontaine-web-36a6f.web.app/",
   },
+  {
+    title: "Tony's coffee web site",
+    details: "Web site of Coffee shop.",
+    category: "ReactJs",
+    id: 2,
+    image: "/tony.png",
+    language: "Typescript/HTML/CSS",
+    link: "https://chihori-suzuki.github.io/tonys-coffee-web/",
+  },
 ];
