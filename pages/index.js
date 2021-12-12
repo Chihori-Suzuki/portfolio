@@ -133,13 +133,6 @@ export default function Home() {
 
   return (
     <Paper className={classes.backpaper}>
-      {/* <motion.div
-        className="baseComponent"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-      > */}
       <NavBar />
       {/* main */}
       <Container className={classes.top}>

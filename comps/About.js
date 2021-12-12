@@ -162,7 +162,7 @@ export default function About() {
   const menuItems1 = [
     {
       text: "Java",
-      icon: stars.eval4,
+      icon: stars.eval3,
     },
     {
       text: "Visual Basic",
@@ -348,9 +348,36 @@ export default function About() {
         </Grid>
         <Grid item xs={12} container data-aos="fade-up">
           <Grid item xs={12} md={6}>
+            <Typography variant="h6">Logical Fabrics</Typography>
+            <Typography className={classes.body2}>
+              Oct 2021 - Current
+            </Typography>
+            <Grid
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="center"
+              className={classes.location}
+            >
+              <LocationOnIcon />
+              <Typography variant="body2">Tokyo</Typography>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="subtitle2">Front-End Developer</Typography>
+            <Typography className={classes.body2}>
+              Developed web applications which is for several companies using
+              Next.js, Typescript, NodeJs, and Firebase. Created tickets on the
+              Github Issues and managed the tasks by kanban (GitHub Projects)
+              with the agile methodology.
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} container data-aos="fade-up">
+          <Grid item xs={12} md={6}>
             <Typography variant="h6">NEC Solution Inovator Inc</Typography>
             <Typography className={classes.body2}>
-              Apr 2012 - Mar 2016
+              Apr 2016 - Mar 2020
             </Typography>
             <Grid
               container
