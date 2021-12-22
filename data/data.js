@@ -26,6 +26,6 @@ export const works = [
     id: 2,
     image: "/tony.png",
     language: "Typescript/HTML/CSS",
-    link: "https://chihori-suzuki.github.io/tonys-coffee-web/",
+    link: "https://tonyscoffee.ca/",
   },
 ];
