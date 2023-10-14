@@ -144,11 +144,11 @@ export default function About() {
     },
     {
       text: "ReactJs",
-      icon: stars.eval3,
+      icon: stars.eval4,
     },
     {
       text: "Next.js",
-      icon: stars.eval3,
+      icon: stars.eval4,
     },
     {
       text: "jQuery",
@@ -165,23 +165,23 @@ export default function About() {
       icon: stars.eval3,
     },
     {
-      text: "Visual Basic",
-      icon: stars.eval4,
+      text: "PHP",
+      icon: stars.eval3,
     },
     {
       text: "Swift",
-      icon: stars.eval3,
+      icon: stars.eval2,
     },
     {
       text: "Objective-C",
       icon: stars.eval2,
     },
     {
-      text: "PosgreSQL",
-      icon: stars.eval4,
+      text: "MySQL",
+      icon: stars.eval3,
     },
     {
-      text: "OracleSQL",
+      text: "PosgreSQL",
       icon: stars.eval3,
     },
   ]
