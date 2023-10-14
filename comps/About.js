@@ -348,9 +348,36 @@ export default function About() {
         </Grid>
         <Grid item xs={12} container data-aos="fade-up">
           <Grid item xs={12} md={6}>
+            <Typography variant="h6">Otonomos</Typography>
+            <Typography className={classes.body2}>
+              Mar 2022 - August 2023
+            </Typography>
+            <Grid
+              container
+              direction="row"
+              justify="flex-start"
+              alignItems="center"
+              className={classes.location}
+            >
+              <LocationOnIcon />
+              <Typography variant="body2">Vancouver</Typography>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="subtitle2">Front-End Developer</Typography>
+            <Typography className={classes.body2}>
+              Developed a user dashboard and incorporation submission form using
+              React and Redux. Collaborated with design and business teams for a
+              seamless UI/UX aligned with company goals. Ensured cross-device
+              compatibility and optimal performance.
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} container data-aos="fade-up">
+          <Grid item xs={12} md={6}>
             <Typography variant="h6">Logical Fabrics</Typography>
             <Typography className={classes.body2}>
-              Oct 2021 - Current
+              Oct 2021 - Mar 2022
             </Typography>
             <Grid
               container
@@ -364,7 +391,7 @@ export default function About() {
             </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Typography variant="subtitle2">Front-End Developer</Typography>
+            <Typography variant="subtitle2">Full-Stack Developer</Typography>
             <Typography className={classes.body2}>
               Developed web applications which is for several companies using
               Next.js, Typescript, NodeJs, and Firebase. Created tickets on the
