@@ -4,16 +4,16 @@ import {
   makeStyles,
   Paper,
   Typography,
-} from "@material-ui/core";
-import React, { useEffect } from "react";
-import WorkCards from "../comps/WorkCards";
-import ContactPage from "../comps/ContactPage";
-import About from "../comps/About";
-import { motion } from "framer-motion";
-import { works } from "../data/data";
-import NavBar from "../comps/NavBar";
-import AOS from "aos";
-import "aos/dist/aos.css";
+} from "@material-ui/core"
+import React, { useEffect } from "react"
+import WorkCards from "../comps/WorkCards"
+import ContactPage from "../comps/ContactPage"
+import About from "../comps/About"
+import { motion } from "framer-motion"
+import { works } from "../data/data"
+import NavBar from "../comps/NavBar"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -108,8 +108,8 @@ const useStyle = makeStyles((theme) => {
       padding: "5%",
       background: "rgba(61, 5, 96, 0.6)",
     },
-  };
-});
+  }
+})
 
 const containerVariants = {
   hidden: {
@@ -123,13 +123,13 @@ const containerVariants = {
     x: "-100vw",
     transition: { ease: "easeInOut" },
   },
-};
+}
 
 export default function Home() {
-  const classes = useStyle();
+  const classes = useStyle()
   useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
-  }, []);
+    AOS.init({ duration: 1200, once: true })
+  }, [])
 
   return (
     <Paper className={classes.backpaper}>
@@ -147,7 +147,7 @@ export default function Home() {
             CHIORI SUZUKI
           </h2>
           <h5 className={classes.typography1} color="secondary">
-            Front-end developer / Software Engineer
+            Web Developer / Full-stack Engineer
           </h5>
 
           <Typography variant="h6"></Typography>
@@ -199,5 +199,5 @@ export default function Home() {
       </Grid>
       {/* </motion.div> */}
     </Paper>
-  );
+  )
 }

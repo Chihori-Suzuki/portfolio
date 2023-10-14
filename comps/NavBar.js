@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { AppBar, makeStyles, Toolbar, Grid } from "@material-ui/core";
-import { Link, animateScroll as scroll } from "react-scroll";
+import Image from "next/image"
+import { AppBar, makeStyles, Toolbar, Grid } from "@material-ui/core"
+import { Link, animateScroll as scroll } from "react-scroll"
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -26,12 +26,13 @@ const useStyles = makeStyles((theme) => {
       [theme.breakpoints.up("sm")]: {
         fontSize: "20px",
       },
+      cursor: "pointer",
     },
-  };
-});
+  }
+})
 
 export default function Navbar() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <AppBar
       className={classes.appBar}
@@ -71,5 +72,5 @@ export default function Navbar() {
         </Grid>
       </Toolbar>
     </AppBar>
-  );
+  )
 }

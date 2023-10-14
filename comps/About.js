@@ -6,13 +6,13 @@ import {
   makeStyles,
   Paper,
   Typography,
-} from "@material-ui/core";
-import React from "react";
-import Image from "next/image";
-import StarIcon from "@material-ui/icons/Star";
-import { purple } from "@material-ui/core/colors";
-import AttachFileIcon from "@material-ui/icons/AttachFile";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+} from "@material-ui/core"
+import React from "react"
+import Image from "next/image"
+import StarIcon from "@material-ui/icons/Star"
+import { purple } from "@material-ui/core/colors"
+import AttachFileIcon from "@material-ui/icons/AttachFile"
+import LocationOnIcon from "@material-ui/icons/LocationOn"
 
 const useStyle = makeStyles((theme) => {
   return {
@@ -76,11 +76,11 @@ const useStyle = makeStyles((theme) => {
       marginTop: "3%",
       marginBottom: "3%",
     },
-  };
-});
+  }
+})
 
 export default function About() {
-  const classes = useStyle();
+  const classes = useStyle()
   const stars = {
     eval1: (
       <Box>
@@ -127,7 +127,7 @@ export default function About() {
         <StarIcon color="primary"></StarIcon>
       </Box>
     ),
-  };
+  }
 
   const menuItems = [
     {
@@ -158,7 +158,7 @@ export default function About() {
       text: "illustrator",
       icon: stars.eval3,
     },
-  ];
+  ]
   const menuItems1 = [
     {
       text: "Java",
@@ -184,7 +184,7 @@ export default function About() {
       text: "OracleSQL",
       icon: stars.eval3,
     },
-  ];
+  ]
 
   return (
     <Container>
@@ -206,7 +206,7 @@ export default function About() {
               layout="fixed"
             />
           </Grid>
-          <Grid item sm={12} md={6} sm container data-aos="fade-up">
+          <Grid item sm={12} md={6} container data-aos="fade-up">
             <Grid item>
               <Typography className={classes.subtitle}>
                 CHIORI SUZUKI
@@ -401,5 +401,5 @@ export default function About() {
         </Grid>
       </Grid>
     </Container>
-  );
+  )
 }
