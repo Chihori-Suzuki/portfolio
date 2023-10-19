@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "react-scripts start --openssl-legacy-provider"
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build"
+  },
+  "engines": {
+    "node": "18.x"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
