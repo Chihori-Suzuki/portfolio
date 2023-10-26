@@ -1,10 +1,5 @@
-import {
-  Container,
-  Grid,
-  makeStyles,
-  Paper,
-  Typography,
-} from "@material-ui/core"
+import { Container, Grid, Paper, Typography } from "@mui/material"
+import { styled } from "@mui/material/styles"
 import React, { useEffect } from "react"
 import WorkCards from "../comps/WorkCards"
 import ContactPage from "../comps/ContactPage"
@@ -15,19 +10,34 @@ import NavBar from "../comps/NavBar"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-const useStyle = makeStyles((theme) => {
+const PREFIX = "index"
+
+const classes = {
+  toolbar: `${PREFIX}-toolbar`,
+  top: `${PREFIX}-top`,
+  card: `${PREFIX}-card`,
+  typography: `${PREFIX}-typography`,
+  typography1: `${PREFIX}-typography1`,
+  typography2: `${PREFIX}-typography2`,
+  gridContact: `${PREFIX}-gridContact`,
+  paper: `${PREFIX}-paper`,
+  paper2: `${PREFIX}-paper2`,
+  backpaper: `${PREFIX}-backpaper`,
+}
+
+const StyledPaper = styled(Paper)(({ theme }) => {
   return {
-    toolbar: theme.mixins.toolbar,
-    top: {
+    [`& .${classes.toolbar}`]: theme.mixins.toolbar,
+    [`& .${classes.top}`]: {
       marginTop: "10%",
       marginBottom: "30%",
       textAlign: "center",
     },
-    card: {
+    [`& .${classes.card}`]: {
       color: "secondary",
     },
-    typography: {
-      [theme.breakpoints.down("sm")]: {
+    [`& .${classes.typography}`]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
         color: "#EFC2FF",
@@ -38,8 +48,8 @@ const useStyle = makeStyles((theme) => {
         color: "#EFC2FF",
       },
     },
-    typography1: {
-      [theme.breakpoints.down("sm")]: {
+    [`& .${classes.typography1}`]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "20px",
         fontWeight: "300",
         color: "#FFFFFF",
@@ -50,9 +60,9 @@ const useStyle = makeStyles((theme) => {
         color: "#FFFFFF",
       },
     },
-    typography2: {
+    [`& .${classes.typography2}`]: {
       textAlign: "center",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
         color: "#590477",
@@ -64,20 +74,20 @@ const useStyle = makeStyles((theme) => {
       },
       padding: "5%",
     },
-    gridContact: {
+    [`& .${classes.gridContact}`]: {
       marginTop: "10%",
       marginBottom: "10%",
       textAlign: "center",
     },
 
-    paper: {
+    [`& .${classes.paper}`]: {
       display: "flex",
       backgroundColor: "#FFFFFF",
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
       paddingBottom: "10%",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         paddingLeft: "10%",
         paddingRight: "10%",
       },
@@ -86,14 +96,14 @@ const useStyle = makeStyles((theme) => {
         paddingRight: "25%",
       },
     },
-    paper2: {
+    [`& .${classes.paper2}`]: {
       display: "flex",
       backgroundColor: "#F1E7FF",
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
       paddingBottom: "10%",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         paddingLeft: "10%",
         paddingRight: "10%",
       },
@@ -103,8 +113,8 @@ const useStyle = makeStyles((theme) => {
       },
     },
 
-    backpaper: {
-      display: "fixed",
+    [`&.${classes.backpaper}`]: {
+      // display: "fixed",
       padding: "5%",
       background: "rgba(61, 5, 96, 0.6)",
     },
@@ -126,13 +136,12 @@ const containerVariants = {
 }
 
 export default function Home() {
-  const classes = useStyle()
   useEffect(() => {
     AOS.init({ duration: 1200, once: true })
   }, [])
 
   return (
-    <Paper className={classes.backpaper}>
+    <StyledPaper className={classes.backpaper}>
       <NavBar />
       {/* main */}
       <Container className={classes.top}>
@@ -155,7 +164,12 @@ export default function Home() {
       </Container>
       {/* Works */}
       <Paper className={classes.paper}>
-        <Grid container direction="column" justify="center" alignItems="center">
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
           <h2 className={classes.typography2} id="work" data-aos="fade-up">
             WORKS
           </h2>
@@ -177,7 +191,12 @@ export default function Home() {
       </Paper>
       {/* About */}
       <Paper className={classes.paper2}>
-        <Grid container direction="column" justify="center" alignItems="center">
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
           <h2 className={classes.typography2} id="about" data-aos="fade-up">
             ABOUT
           </h2>
@@ -189,7 +208,7 @@ export default function Home() {
       <Grid
         container
         direction="column"
-        justify="center"
+        justifyContent="center"
         className={classes.gridContact}
       >
         <h2 className={classes.typography} id="contact" data-aos="fade-up">
@@ -198,6 +217,6 @@ export default function Home() {
         <ContactPage></ContactPage>
       </Grid>
       {/* </motion.div> */}
-    </Paper>
+    </StyledPaper>
   )
 }

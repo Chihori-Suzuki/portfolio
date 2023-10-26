@@ -1,7 +1,7 @@
-import { pink, purple } from "@material-ui/core/colors";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { pink, purple } from "@mui/material/colors";
+import { createTheme, adaptV4Theme } from "@mui/material/styles";
 
-const theme = createMuiTheme({
+const theme = createTheme(adaptV4Theme({
   palette: {
     primary: {
       main: purple[400],
@@ -10,6 +10,6 @@ const theme = createMuiTheme({
       main: purple[100],
     },
   },
-});
+}));
 
 export default theme;

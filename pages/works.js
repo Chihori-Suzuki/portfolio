@@ -1,16 +1,30 @@
-import { Grid, Link, Paper, AppBar, Toolbar, Box } from "@material-ui/core"
-import Typography from "@material-ui/core/Typography"
-import { makeStyles } from "@material-ui/styles"
+import { Grid, Link, Paper, AppBar, Toolbar, Box } from "@mui/material"
+import { styled } from "@mui/material/styles"
+import Typography from "@mui/material/Typography"
 import Image from "next/image"
 import { works } from "../data/data"
-import ArrowBackIcon from "@material-ui/icons/ArrowBack"
+import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 
-const useStyle = makeStyles((theme) => {
+const PREFIX = "works"
+
+const classes = {
+  grid: `${PREFIX}-grid`,
+  paper: `${PREFIX}-paper`,
+  appBar: `${PREFIX}-appBar`,
+  textColor: `${PREFIX}-textColor`,
+  typography2: `${PREFIX}-typography2`,
+  subtitle: `${PREFIX}-subtitle`,
+  body: `${PREFIX}-body`,
+  body2: `${PREFIX}-body2`,
+  body3: `${PREFIX}-body3`,
+}
+
+const StyledPaper = styled(Paper)(({ theme }) => {
   return {
-    grid: {
+    [`& .${classes.grid}`]: {
       paddingTop: "5%",
       paddingBottom: "10%",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         paddingLeft: "10%",
         paddingRight: "10%",
       },
@@ -19,17 +33,17 @@ const useStyle = makeStyles((theme) => {
         paddingRight: "25%",
       },
     },
-    paper: {
+    [`&.${classes.paper}`]: {
       display: "flex",
       background: "rgba(255, 255, 255, 0.7)",
       borderRadius: 0,
     },
 
-    appBar: {
+    [`& .${classes.appBar}`]: {
       marginTop: "5%",
       paddingLeft: "5%",
     },
-    textColor: {
+    [`& .${classes.textColor}`]: {
       marginLeft: "3%",
       padding: "1%",
       color: "black",
@@ -38,9 +52,9 @@ const useStyle = makeStyles((theme) => {
         background: "linear-gradient(to right bottom, #9BA8FC, #F2BEE4)",
       },
     },
-    typography2: {
+    [`& .${classes.typography2}`]: {
       textAlign: "center",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
         color: "#590477",
@@ -52,10 +66,10 @@ const useStyle = makeStyles((theme) => {
       },
       padding: "5%",
     },
-    subtitle: {
+    [`& .${classes.subtitle}`]: {
       marginTop: "7%",
       marginBottom: "3%",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "20px",
         fontWeight: "300",
       },
@@ -64,8 +78,8 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "350",
       },
     },
-    body: {
-      [theme.breakpoints.down("sm")]: {
+    [`& .${classes.body}`]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "15px",
         fontWeight: "300",
       },
@@ -74,8 +88,8 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "350",
       },
     },
-    body2: {
-      [theme.breakpoints.down("sm")]: {
+    [`& .${classes.body2}`]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "17px",
         fontWeight: "300",
       },
@@ -84,8 +98,8 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "350",
       },
     },
-    body3: {
-      [theme.breakpoints.down("sm")]: {
+    [`& .${classes.body3}`]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "15px",
         fontWeight: "300",
       },
@@ -103,10 +117,8 @@ export async function getServerSideProps(context) {
 }
 
 export default function Works({ id }) {
-  const classes = useStyle()
-
   return (
-    <Paper className={classes.paper}>
+    <StyledPaper className={classes.paper}>
       <AppBar color="transparent" className={classes.appBar} elevation={0}>
         <Toolbar>
           <ArrowBackIcon />
@@ -121,7 +133,7 @@ export default function Works({ id }) {
         className={classes.grid}
         direction="column"
         alignItems="center"
-        justify="space-between"
+        justifyContent="space-between"
       >
         <h2 className={classes.typography2}>{works[id].title}</h2>
         <Image
@@ -159,6 +171,6 @@ export default function Works({ id }) {
           {works[id].link}
         </Link>
       </Grid>
-    </Paper>
+    </StyledPaper>
   )
 }

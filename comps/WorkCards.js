@@ -5,29 +5,35 @@ import {
   CardContent,
   CardMedia,
   Typography,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
-import React from "react";
+} from "@mui/material"
+import { styled } from "@mui/material/styles"
+import React from "react"
 
-const useStyle = makeStyles((theme) => {
+const PREFIX = "WorkCards"
+
+const classes = {
+  card: `${PREFIX}-card`,
+  box: `${PREFIX}-box`,
+}
+
+const StyledCard = styled(Card)(({ theme }) => {
   return {
-    card: {
+    [`&.${classes.card}`]: {
       "&:hover": {
         transform: "scale3d(1.05, 1.05, 1)",
       },
       display: "flex",
     },
-    box: {
+    [`& .${classes.box}`]: {
       display: "flex",
       flexDirection: "column",
     },
-  };
-});
+  }
+})
 
 export default function WorkCard({ work }) {
-  const classes = useStyle();
   return (
-    <Card className={classes.card} elevation={3}>
+    <StyledCard className={classes.card} elevation={3}>
       <CardActionArea href={"/works?id=" + work.id}>
         <ButtonBase>
           <div className={classes.box}>
@@ -48,6 +54,6 @@ export default function WorkCard({ work }) {
           </div>
         </ButtonBase>
       </CardActionArea>
-    </Card>
-  );
+    </StyledCard>
+  )
 }

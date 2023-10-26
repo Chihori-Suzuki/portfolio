@@ -3,30 +3,43 @@ import {
   Container,
   Grid,
   IconButton,
-  makeStyles,
   Paper,
   Typography,
-} from "@material-ui/core"
+} from "@mui/material"
+import { styled } from "@mui/material/styles"
 import React from "react"
 import Image from "next/image"
-import StarIcon from "@material-ui/icons/Star"
-import { purple } from "@material-ui/core/colors"
-import AttachFileIcon from "@material-ui/icons/AttachFile"
-import LocationOnIcon from "@material-ui/icons/LocationOn"
+import StarIcon from "@mui/icons-material/Star"
+import { purple } from "@mui/material/colors"
+import AttachFileIcon from "@mui/icons-material/AttachFile"
+import LocationOnIcon from "@mui/icons-material/LocationOn"
 
-const useStyle = makeStyles((theme) => {
+const PREFIX = "About"
+
+const classes = {
+  text: `${PREFIX}-text`,
+  box: `${PREFIX}-box`,
+  typography: `${PREFIX}-typography`,
+  paper: `${PREFIX}-paper`,
+  subtitle: `${PREFIX}-subtitle`,
+  body: `${PREFIX}-body`,
+  body2: `${PREFIX}-body2`,
+  location: `${PREFIX}-location`,
+}
+
+const StyledContainer = styled(Container)(({ theme }) => {
   return {
-    text: {
+    [`& .${classes.text}`]: {
       color: purple[800],
     },
-    box: {
+    [`& .${classes.box}`]: {
       "&:hover": {
         transform: "scale3d(1.05, 1.05, 1)",
       },
     },
-    typography: {
+    [`& .${classes.typography}`]: {
       // marginBottom: 30,
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
       },
@@ -35,14 +48,14 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "500",
       },
     },
-    paper: {
+    [`& .${classes.paper}`]: {
       background: "transparent",
       paddingBottom: "5%",
     },
 
-    subtitle: {
+    [`& .${classes.subtitle}`]: {
       marginTop: "7%",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "20px",
         fontWeight: "300",
       },
@@ -51,8 +64,8 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "400",
       },
     },
-    body: {
-      [theme.breakpoints.down("sm")]: {
+    [`& .${classes.body}`]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "14px",
         fontWeight: "300",
       },
@@ -61,9 +74,9 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "350",
       },
     },
-    body2: {
+    [`& .${classes.body2}`]: {
       marginTop: "3%",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "12px",
         fontWeight: "300",
       },
@@ -72,7 +85,7 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "350",
       },
     },
-    location: {
+    [`& .${classes.location}`]: {
       marginTop: "3%",
       marginBottom: "3%",
     },
@@ -80,7 +93,6 @@ const useStyle = makeStyles((theme) => {
 })
 
 export default function About() {
-  const classes = useStyle()
   const stars = {
     eval1: (
       <Box>
@@ -187,7 +199,7 @@ export default function About() {
   ]
 
   return (
-    <Container>
+    <StyledContainer>
       <Paper className={classes.paper} elevation={0}>
         <Grid container spacing={2}>
           <Grid
@@ -195,7 +207,7 @@ export default function About() {
             sm={12}
             md={6}
             container
-            justify="center"
+            justifyContent="center"
             data-aos="fade-up"
           >
             <Image
@@ -226,6 +238,7 @@ export default function About() {
                   href="https://docs.google.com/document/d/1qcXhFF9GeD5I0hNwCzPOoyjpbZ3PMbE175JnriOuaTM/edit"
                   target="_blank"
                   rel="noopener noreferrer"
+                  size="large"
                 >
                   <AttachFileIcon />
                 </IconButton>
@@ -235,7 +248,7 @@ export default function About() {
         </Grid>
       </Paper>
       <Grid container spacing={5} data-aos="fade-up">
-        <Grid item xs={12} container justify="center">
+        <Grid item xs={12} container justifyContent="center">
           <Typography className={classes.subtitle}>SKILLS</Typography>
         </Grid>
         <Grid item container spacing={10}>
@@ -276,7 +289,7 @@ export default function About() {
         </Grid>
       </Grid>
       <Grid container spacing={5}>
-        <Grid item xs={12} container justify="center" data-aos="fade-up">
+        <Grid item xs={12} container justifyContent="center" data-aos="fade-up">
           <Typography className={classes.subtitle}>EDUCATIONS</Typography>
         </Grid>
         <Grid item xs={12} container>
@@ -290,7 +303,7 @@ export default function About() {
             <Grid
               container
               direction="row"
-              justify="flex-start"
+              justifyContent="flex-start"
               alignItems="center"
               className={classes.location}
             >
@@ -320,7 +333,7 @@ export default function About() {
             <Grid
               container
               direction="row"
-              justify="flex-start"
+              justifyContent="flex-start"
               alignItems="center"
               className={classes.location}
             >
@@ -341,7 +354,7 @@ export default function About() {
         </Grid>
       </Grid>
       <Grid container spacing={5}>
-        <Grid item xs={12} container justify="center">
+        <Grid item xs={12} container justifyContent="center">
           <Typography className={classes.subtitle} data-aos="fade-up">
             CAREER
           </Typography>
@@ -355,7 +368,7 @@ export default function About() {
             <Grid
               container
               direction="row"
-              justify="flex-start"
+              justifyContent="flex-start"
               alignItems="center"
               className={classes.location}
             >
@@ -382,7 +395,7 @@ export default function About() {
             <Grid
               container
               direction="row"
-              justify="flex-start"
+              justifyContent="flex-start"
               alignItems="center"
               className={classes.location}
             >
@@ -409,7 +422,7 @@ export default function About() {
             <Grid
               container
               direction="row"
-              justify="flex-start"
+              justifyContent="flex-start"
               alignItems="center"
               className={classes.location}
             >
@@ -427,6 +440,6 @@ export default function About() {
           </Grid>
         </Grid>
       </Grid>
-    </Container>
+    </StyledContainer>
   )
 }

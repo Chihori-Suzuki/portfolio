@@ -1,26 +1,35 @@
 import Image from "next/image"
-import { AppBar, makeStyles, Toolbar, Grid } from "@material-ui/core"
+import { styled } from "@mui/material/styles"
+import { AppBar, Toolbar, Grid } from "@mui/material"
 import { Link, animateScroll as scroll } from "react-scroll"
 
-const useStyles = makeStyles((theme) => {
+const PREFIX = "NavBar"
+
+const classes = {
+  appBar: `${PREFIX}-appBar`,
+  logo: `${PREFIX}-logo`,
+  textColor: `${PREFIX}-textColor`,
+}
+
+const StyledAppBar = styled(AppBar)(({ theme }) => {
   return {
-    appBar: {
+    [`&.${classes.appBar}`]: {
       width: "auto",
       marginLeft: "10%",
       marginRight: "9%",
       marginTop: "3%",
     },
-    logo: {
+    [`& .${classes.logo}`]: {
       flexGrow: 1,
     },
-    textColor: {
+    [`& .${classes.textColor}`]: {
       "&:hover": {
         background: "linear-gradient(to right bottom, #9BA8FC, #F2BEE4)",
       },
       marginLeft: 15,
       padding: "1%",
       color: "white",
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "10px",
       },
       [theme.breakpoints.up("sm")]: {
@@ -32,16 +41,15 @@ const useStyles = makeStyles((theme) => {
 })
 
 export default function Navbar() {
-  const classes = useStyles()
   return (
-    <AppBar
+    <StyledAppBar
       className={classes.appBar}
       position="static"
       elevation={0}
       style={{ background: "transparent" }}
     >
       <Toolbar>
-        <Grid container justify="flex-end">
+        <Grid container justifyContent="flex-end">
           <Link
             className={classes.textColor}
             to="work"
@@ -71,6 +79,6 @@ export default function Navbar() {
           </Link>
         </Grid>
       </Toolbar>
-    </AppBar>
+    </StyledAppBar>
   )
 }

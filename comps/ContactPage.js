@@ -1,13 +1,22 @@
-import { makeStyles, Grid, IconButton } from "@material-ui/core";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import EmailIcon from "@material-ui/icons/Email";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { Grid, IconButton } from "@mui/material"
+import { styled } from "@mui/material/styles"
+import InstagramIcon from "@mui/icons-material/Instagram"
+import EmailIcon from "@mui/icons-material/Email"
+import GitHubIcon from "@mui/icons-material/GitHub"
 
-const useStyle = makeStyles((theme) => {
+const PREFIX = "ContactPage"
+
+const classes = {
+  typography: `${PREFIX}-typography`,
+  typography1: `${PREFIX}-typography1`,
+  icon: `${PREFIX}-icon`,
+}
+
+const StyledGrid = styled(Grid)(({ theme }) => {
   return {
-    typography: {
+    [`& .${classes.typography}`]: {
       marginBottom: 30,
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
       },
@@ -16,9 +25,9 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "500",
       },
     },
-    typography1: {
+    [`& .${classes.typography1}`]: {
       marginBottom: 30,
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "15px",
         fontWeight: "300",
       },
@@ -27,24 +36,28 @@ const useStyle = makeStyles((theme) => {
         fontWeight: "500",
       },
     },
-    icon: {
+    [`& .${classes.icon}`]: {
       color: "#FFFFFF",
       fontSize: 40,
       marginLeft: "10px",
       marginRight: "10px",
     },
-  };
-});
+  }
+})
 
 export default function ContactPage() {
-  const classes = useStyle();
-
   return (
-    <Grid container justify="center" alignItems="center" data-aos="fade-up">
+    <StyledGrid
+      container
+      justifyContent="center"
+      alignItems="center"
+      data-aos="fade-up"
+    >
       <IconButton
         href="https://www.instagram.com/chihhorin/"
         target="_blank"
         rel="noopener noreferrer"
+        size="large"
       >
         <InstagramIcon className={classes.icon}></InstagramIcon>
       </IconButton>
@@ -52,16 +65,22 @@ export default function ContactPage() {
         href="https://github.com/Chihori-Suzuki"
         target="_blank"
         rel="noopener noreferrer"
+        size="large"
       >
         <GitHubIcon className={classes.icon}></GitHubIcon>
       </IconButton>
-      <IconButton href="mailto:suzuki4254545@gmail.com" target="_top">
+      <IconButton
+        href="mailto:suzuki4254545@gmail.com"
+        target="_top"
+        size="large"
+      >
         <EmailIcon className={classes.icon}></EmailIcon>
       </IconButton>
       <IconButton
         href="https://www.linkedin.com/in/chihori-suzuki-062035199/"
         target="_blank"
         rel="noopener noreferrer"
+        size="large"
       >
         <svg
           className={classes.icon}
@@ -91,6 +110,6 @@ export default function ContactPage() {
           </g>
         </svg>
       </IconButton>
-    </Grid>
-  );
+    </StyledGrid>
+  )
 }
