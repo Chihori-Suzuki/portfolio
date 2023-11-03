@@ -16,8 +16,9 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.14.14",
-    "@mui/material": "^5.14.14",
+    "@mui/material": "^5.14.16",
     "@mui/styles": "^5.14.15",
+    "@mui/system": "^5.14.16",
     "aos": "^2.3.4",
     "css-loader": "^5.2.7",
     "file-loader": "^6.2.0",
@@ -33,6 +34,7 @@
     "react-scripts": "5.0.0",
     "react-scroll": "^1.9.0",
     "style-loader": "^2.0.0",
+    "styled-components": "^6.1.0",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
