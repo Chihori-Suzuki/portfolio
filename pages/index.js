@@ -1,6 +1,7 @@
 import { Container, Grid, Paper, Typography } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import React, { useEffect } from "react"
+import Image from "next/image"
 import WorkCards from "../comps/WorkCards"
 import ContactPage from "../comps/ContactPage"
 import About from "../comps/About"
@@ -141,82 +142,100 @@ export default function Home() {
   }, [])
 
   return (
-    <StyledPaper className={classes.backpaper}>
-      <NavBar />
-      {/* main */}
-      <Container className={classes.top}>
-        <motion.div
-          className="baseComponent"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-        >
-          <h2 className={classes.typography} id="top" color="primary">
-            CHIORI SUZUKI
-          </h2>
-          <h5 className={classes.typography1} color="secondary">
-            Web Developer / Full-stack Engineer
-          </h5>
+    <>
+      <StyledPaper className={classes.backpaper}>
+        <NavBar />
+        {/* main */}
+        <Container className={classes.top}>
+          <motion.div
+            className="baseComponent"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <h2 className={classes.typography} id="top" color="primary">
+              CHIORI SUZUKI
+            </h2>
+            <h5 className={classes.typography1} color="secondary">
+              Web Developer / Full-stack Engineer
+            </h5>
 
-          <Typography variant="h6"></Typography>
-        </motion.div>
-      </Container>
-      {/* Works */}
-      <Paper className={classes.paper}>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <h2 className={classes.typography2} id="work" data-aos="fade-up">
-            WORKS
-          </h2>
-          <Grid container spacing={8}>
-            {works.map((work) => (
-              <Grid
-                item
-                key={work.id}
-                xs={12}
-                md={12}
-                lg={6}
-                data-aos="fade-up"
-              >
-                <WorkCards className={classes.card} work={work} />
-              </Grid>
-            ))}
+            <Typography variant="h6"></Typography>
+          </motion.div>
+        </Container>
+        {/* Works */}
+        <Paper className={classes.paper}>
+          <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <h2 className={classes.typography2} id="work" data-aos="fade-up">
+              WORKS
+            </h2>
+            <Grid container spacing={8}>
+              {works.map((work) => (
+                <Grid
+                  item
+                  key={work.id}
+                  xs={12}
+                  md={12}
+                  lg={6}
+                  data-aos="fade-up"
+                >
+                  <WorkCards className={classes.card} work={work} />
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
-        </Grid>
-      </Paper>
-      {/* About */}
-      <Paper className={classes.paper2}>
+        </Paper>
+        {/* About */}
+        <Paper className={classes.paper2}>
+          <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <h2 className={classes.typography2} id="about" data-aos="fade-up">
+              ABOUT
+            </h2>
+            <About></About>
+          </Grid>
+        </Paper>
+        {/* Contact */}
+
         <Grid
           container
           direction="column"
           justifyContent="center"
-          alignItems="center"
+          className={classes.gridContact}
         >
-          <h2 className={classes.typography2} id="about" data-aos="fade-up">
-            ABOUT
+          <h2 className={classes.typography} id="contact" data-aos="fade-up">
+            CONTACT
           </h2>
-          <About></About>
+          <ContactPage></ContactPage>
         </Grid>
-      </Paper>
-      {/* Contact */}
-
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        className={classes.gridContact}
+        {/* </motion.div> */}
+      </StyledPaper>
+      <div
+        style={{
+          zIndex: -1,
+          position: "fixed",
+          width: "100vw",
+          height: "100vh",
+          top: "0",
+        }}
       >
-        <h2 className={classes.typography} id="contact" data-aos="fade-up">
-          CONTACT
-        </h2>
-        <ContactPage></ContactPage>
-      </Grid>
-      {/* </motion.div> */}
-    </StyledPaper>
+        <Image
+          alt="background-image"
+          src="/background.png"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+    </>
   )
 }

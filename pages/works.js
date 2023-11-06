@@ -143,12 +143,7 @@ export default function Works({ id }) {
           className={classes.margin}
         ></Image>
         <Box mt="5%" mx="7%">
-          <Typography
-            variant="body1"
-            gutterBottom
-            className={classes.body}
-            word
-          >
+          <Typography variant="body1" gutterBottom className={classes.body}>
             {works[id].details}
           </Typography>
         </Box>

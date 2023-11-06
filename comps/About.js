@@ -225,7 +225,7 @@ export default function About() {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography className={classes.body} word>
+              <Typography className={classes.body}>
                 I am a junior programmer with knowledge of front-end techniques.
                 <br />I like studying new technology and improving my skills. I
                 like working with team and helping others.{" "}
