@@ -16,33 +16,35 @@ const classes = {
   box: `${PREFIX}-box`,
 }
 
-const StyledCard = styled(Card)(({ theme }) => {
-  return {
-    [`&.${classes.card}`]: {
-      "&:hover": {
-        transform: "scale3d(1.05, 1.05, 1)",
-      },
-      display: "flex",
+const StyledCard = styled(Card)(({ theme }) => ({
+  [`&.${classes.card}`]: {
+    "&:hover": {
+      transform: "scale3d(1.05, 1.05, 1)",
     },
-    [`& .${classes.box}`]: {
-      display: "flex",
-      flexDirection: "column",
-    },
-  }
-})
+    display: "flex",
+    flexDirection: "column", // Ensure the card content is stacked vertically
+    width: "100%", // Make the card take full width
+  },
+  [`& .${classes.box}`]: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch", // Ensure the box content stretches to fit the card
+  },
+}))
 
 export default function WorkCard({ work }) {
   return (
     <StyledCard className={classes.card} elevation={3}>
       <CardActionArea href={"/works?id=" + work.id}>
-        <ButtonBase>
-          <div className={classes.box}>
+        <ButtonBase style={{ width: "100%" }}>
+          <div className={classes.box} style={{ width: "100%" }}>
             <CardMedia
               component="img"
               image={work.image}
-              height={300}
+              height="300"
               title={work.image}
-            ></CardMedia>
+              style={{ objectFit: "fill", width: "100%" }} // Ensure the image covers the card width
+            />
             <CardContent>
               <Typography gutterBottom variant="h5">
                 {work.title}

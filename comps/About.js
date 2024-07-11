@@ -235,7 +235,7 @@ export default function About() {
               <Grid container direction="row" alignItems="center">
                 <Typography className={classes.body}>Resume →</Typography>
                 <IconButton
-                  href="https://docs.google.com/document/d/1qcXhFF9GeD5I0hNwCzPOoyjpbZ3PMbE175JnriOuaTM/edit"
+                  href="https://docs.google.com/document/d/1s2E-aVGo1TkSwELzQnKn-KaC9BgyEERfqCC1qm5JXQg/edit"
                   target="_blank"
                   rel="noopener noreferrer"
                   size="large"
@@ -361,9 +361,34 @@ export default function About() {
         </Grid>
         <Grid item xs={12} container data-aos="fade-up">
           <Grid item xs={12} md={6}>
+            <Typography variant="h6">BonBon Inc</Typography>
+            <Typography className={classes.body2}>
+              January 2024 - Present
+            </Typography>
+            <Grid
+              container
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              className={classes.location}
+            >
+              <LocationOnIcon />
+              <Typography variant="body2">Tokyo</Typography>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="subtitle2">Front-End Developer</Typography>
+            <Typography className={classes.body2}>
+              Developed a clinic management system with a user-friendly calendar
+              for scheduling. Created a patient reservation system for direct
+              booking. Utilized Figma, React, Node.js, and PostgreSQL for smooth
+              and robust performance.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
             <Typography variant="h6">Otonomos</Typography>
             <Typography className={classes.body2}>
-              Mar 2022 - August 2023
+              Mar 2022 - Present
             </Typography>
             <Grid
               container
