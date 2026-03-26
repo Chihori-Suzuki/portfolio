@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material"
 import { styled } from "@mui/material/styles"
+import { colors } from "../src/theme"
 import React from "react"
 import Image from "next/image"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
@@ -28,7 +29,7 @@ const classes = {
 const StyledContainer = styled(Container)(({ theme }) => {
   return {
     [`& .${classes.text}`]: {
-      color: "#8B7355",
+      color: colors.primary,
     },
     [`& .${classes.box}`]: {
       "&:hover": {
@@ -94,7 +95,8 @@ export default function About() {
   const skills = [
     "TypeScript", "JavaScript", "React", "Next.js", "Redux", "Zustand",
     "HTML", "CSS", "Tailwind CSS", "Node.js", "PostgreSQL", "Firebase",
-    "Redis", "Figma", "Git",
+    "Redis", "Figma", "Git", "Docker", "AWS Amplify", "Jest",
+    "OpenAI API", "Laravel", "MySQL",
   ]
 
   return (
@@ -146,19 +148,19 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  border: "1px solid #1A1A1A",
+                  border: `1px solid ${colors.text}`,
                   padding: "8px 24px",
                   borderRadius: "2px",
                   fontFamily: "'Inter', sans-serif",
                   fontWeight: 300,
                   fontSize: "0.875rem",
                   letterSpacing: "0.08em",
-                  color: "#1A1A1A",
+                  color: colors.text,
                   background: "transparent",
                   textTransform: "none",
                   "&:hover": {
-                    background: "#1A1A1A",
-                    color: "#FAFAF8",
+                    background: colors.text,
+                    color: colors.textLight,
                     transition: "all 0.2s ease",
                   },
                 }}
@@ -180,12 +182,12 @@ export default function About() {
                 key={skill}
                 label={skill}
                 sx={{
-                  background: "#F0EDE6",
+                  background: colors.bgChip,
                   borderRadius: "4px",
                   padding: "4px 12px",
                   fontSize: "14px",
                   fontFamily: "'Inter', sans-serif",
-                  color: "#1A1A1A",
+                  color: colors.text,
                 }}
               />
             ))}

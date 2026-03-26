@@ -1,5 +1,6 @@
 import { Container, Grid, Paper, Typography } from "@mui/material"
 import { styled } from "@mui/material/styles"
+import { colors } from "../src/theme"
 import React, { useEffect } from "react"
 import Image from "next/image"
 import WorkCards from "../comps/WorkCards"
@@ -41,24 +42,24 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
-        color: "#FAFAF8",
+        color: colors.textLight,
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "60px",
         fontWeight: "400",
-        color: "#FAFAF8",
+        color: colors.textLight,
       },
     },
     [`& .${classes.typography1}`]: {
       [theme.breakpoints.down("md")]: {
         fontSize: "20px",
         fontWeight: "300",
-        color: "#FFFFFF",
+        color: colors.textLight,
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "25px",
         fontWeight: "400",
-        color: "#FFFFFF",
+        color: colors.textLight,
       },
     },
     [`& .${classes.typography2}`]: {
@@ -66,13 +67,13 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
-        color: "#1A1A1A",
+        color: colors.text,
         fontFamily: "'Cormorant Garamond', serif",
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "60px",
         fontWeight: "400",
-        color: "#1A1A1A",
+        color: colors.text,
         fontFamily: "'Cormorant Garamond', serif",
       },
       padding: "5%",
@@ -85,7 +86,7 @@ const StyledPaper = styled(Paper)(({ theme }) => {
 
     [`& .${classes.paper}`]: {
       display: "flex",
-      backgroundColor: "#FAFAF8",
+      backgroundColor: colors.bg,
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
@@ -102,7 +103,7 @@ const StyledPaper = styled(Paper)(({ theme }) => {
     },
     [`& .${classes.paper2}`]: {
       display: "flex",
-      backgroundColor: "#FAFAF8",
+      backgroundColor: colors.bg,
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
@@ -121,7 +122,7 @@ const StyledPaper = styled(Paper)(({ theme }) => {
     [`&.${classes.backpaper}`]: {
       // display: "fixed",
       padding: "5%",
-      background: "rgba(26, 26, 26, 0.5)",
+      background: colors.overlay,
     },
   }
 })

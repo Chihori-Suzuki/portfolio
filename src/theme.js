@@ -1,19 +1,33 @@
 import { createTheme, adaptV4Theme } from "@mui/material/styles";
 
+// Centralized color tokens — import `colors` where needed instead of hardcoding hex values
+export const colors = {
+  primary: "#8B7355",       // accent (muted gold)
+  primaryHover: "rgba(139, 115, 85, 0.2)",
+  border: "#E8E4DC",        // borders, dividers
+  bg: "#FAFAF8",            // main background (off-white)
+  bgAlt: "#F5F2EC",         // placeholder / card alt background
+  bgChip: "#F0EDE6",        // skill pill background
+  text: "#1A1A1A",          // primary text (near-black)
+  textSub: "#888888",       // secondary text (grey)
+  textLight: "#FAFAF8",     // light text on dark backgrounds
+  overlay: "rgba(26, 26, 26, 0.5)", // hero overlay
+};
+
 const theme = createTheme(adaptV4Theme({
   palette: {
     primary: {
-      main: "#8B7355",
+      main: colors.primary,
     },
     secondary: {
-      main: "#E8E4DC",
+      main: colors.border,
     },
     background: {
-      default: "#FAFAF8",
+      default: colors.bg,
     },
     text: {
-      primary: "#1A1A1A",
-      secondary: "#888888",
+      primary: colors.text,
+      secondary: colors.textSub,
     },
   },
   typography: {

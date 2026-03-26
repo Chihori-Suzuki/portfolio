@@ -1,5 +1,6 @@
 import { Grid, Link, Paper, AppBar, Toolbar, Box } from "@mui/material"
 import { styled } from "@mui/material/styles"
+import { colors } from "../src/theme"
 import Typography from "@mui/material/Typography"
 import Image from "next/image"
 import { works } from "../data/data"
@@ -46,10 +47,10 @@ const StyledPaper = styled(Paper)(({ theme }) => {
     [`& .${classes.textColor}`]: {
       marginLeft: "3%",
       padding: "1%",
-      color: "#1A1A1A",
+      color: colors.text,
       fontSize: "20px",
       "&:hover": {
-        background: "rgba(139, 115, 85, 0.2)",
+        background: colors.primaryHover,
       },
     },
     [`& .${classes.typography2}`]: {
@@ -57,13 +58,13 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
-        color: "#1A1A1A",
+        color: colors.text,
         fontFamily: "'Cormorant Garamond', serif",
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "40px",
         fontWeight: "400",
-        color: "#1A1A1A",
+        color: colors.text,
         fontFamily: "'Cormorant Garamond', serif",
       },
       padding: "5%",
@@ -115,7 +116,13 @@ const StyledPaper = styled(Paper)(({ theme }) => {
 
 export async function getServerSideProps(context) {
   const { id } = context.query
-  return { props: { id } }
+  const workId = parseInt(id, 10)
+
+  if (isNaN(workId) || workId < 0 || workId >= works.length) {
+    return { notFound: true }
+  }
+
+  return { props: { id: workId } }
 }
 
 export default function Works({ id }) {
@@ -153,9 +160,9 @@ export default function Works({ id }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#F5F2EC",
+              backgroundColor: colors.bgAlt,
               borderRadius: 0,
-              color: "#888888",
+              color: colors.textSub,
             }}
           >
             <Typography variant="h6">No Image Available</Typography>
@@ -182,7 +189,7 @@ export default function Works({ id }) {
               href={works[id].link}
               target="_blank"
               className={classes.body3}
-              color="#8B7355"
+              color={colors.primary}
             >
               {works[id].link}
             </Link>

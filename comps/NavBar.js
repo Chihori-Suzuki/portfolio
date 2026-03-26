@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { styled } from "@mui/material/styles"
+import { colors } from "../src/theme"
 import { AppBar, Toolbar, Grid } from "@mui/material"
 import { Link, animateScroll as scroll } from "react-scroll"
 
@@ -24,7 +25,7 @@ const StyledAppBar = styled(AppBar)(({ theme }) => {
     },
     [`& .${classes.textColor}`]: {
       "&:hover": {
-        background: "rgba(139, 115, 85, 0.2)",
+        background: colors.primaryHover,
       },
       marginLeft: 15,
       padding: "1%",

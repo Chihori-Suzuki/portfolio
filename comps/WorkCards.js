@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material"
 import { styled } from "@mui/material/styles"
+import { colors } from "../src/theme"
 import React from "react"
 
 const PREFIX = "WorkCards"
@@ -20,12 +21,12 @@ const classes = {
 
 const StyledCard = styled(Card)(({ theme }) => ({
   [`&.${classes.card}`]: {
-    border: "1px solid #E8E4DC",
+    border: `1px solid ${colors.border}`,
     boxShadow: "none",
     borderRadius: 0,
     transition: "border-color 0.3s ease",
     "&:hover": {
-      borderColor: "#8B7355",
+      borderColor: colors.primary,
     },
     display: "flex",
     flexDirection: "column",
@@ -41,8 +42,8 @@ const StyledCard = styled(Card)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#F5F2EC",
-    color: "#888888",
+    backgroundColor: colors.bgAlt,
+    color: colors.textSub,
     fontSize: "16px",
   },
 }))
