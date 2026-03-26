@@ -142,7 +142,7 @@ export default function About() {
                 about clean UI/UX and cross-functional team collaboration.
               </Typography>
             </Grid>
-            <Grid item>
+            <Grid item sx={{ marginTop: "12px" }}>
               <Button
                 href="/resume.pdf"
                 target="_blank"

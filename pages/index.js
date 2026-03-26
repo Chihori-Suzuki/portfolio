@@ -37,6 +37,7 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       justifyContent: "center",
       alignItems: "center",
       textAlign: "center",
+      paddingBottom: "12vh",
     },
     [`& .${classes.card}`]: {
       color: "secondary",
