@@ -31,7 +31,7 @@ const StyledPaper = styled(Paper)(({ theme }) => {
   return {
     [`& .${classes.toolbar}`]: theme.mixins.toolbar,
     [`& .${classes.top}`]: {
-      minHeight: "100vh",
+      minHeight: "calc(100vh - 120px)",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
