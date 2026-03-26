@@ -174,7 +174,7 @@ export default function Works({ id }) {
           </Typography>
         </Box>
         <Typography variant="h5" className={classes.subtitle}>
-          Language, Software
+          Tech Stack
         </Typography>
         <Typography variant="h6" gutterBottom className={classes.body2}>
           {works[id].stacks}
@@ -182,7 +182,7 @@ export default function Works({ id }) {
         {works[id].link && (
           <>
             <Typography variant="h5" className={classes.subtitle}>
-              Link
+              Live Site
             </Typography>
             <Link
               variant="h6"

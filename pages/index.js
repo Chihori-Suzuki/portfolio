@@ -31,8 +31,11 @@ const StyledPaper = styled(Paper)(({ theme }) => {
   return {
     [`& .${classes.toolbar}`]: theme.mixins.toolbar,
     [`& .${classes.top}`]: {
-      marginTop: "10%",
-      marginBottom: "15%",
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
       textAlign: "center",
     },
     [`& .${classes.card}`]: {

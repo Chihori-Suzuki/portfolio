@@ -24,9 +24,12 @@ const StyledCard = styled(Card)(({ theme }) => ({
     border: `1px solid ${colors.border}`,
     boxShadow: "none",
     borderRadius: 0,
-    transition: "border-color 0.3s ease",
+    transition: "all 0.25s ease",
+    cursor: "pointer",
     "&:hover": {
       borderColor: colors.primary,
+      transform: "translateY(-4px)",
+      boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
     },
     display: "flex",
     flexDirection: "column",
