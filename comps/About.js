@@ -1,17 +1,15 @@
 import {
   Box,
+  Button,
+  Chip,
   Container,
   Grid,
-  IconButton,
   Paper,
   Typography,
 } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import React from "react"
 import Image from "next/image"
-import StarIcon from "@mui/icons-material/Star"
-import { purple } from "@mui/material/colors"
-import AttachFileIcon from "@mui/icons-material/AttachFile"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 
 const PREFIX = "About"
@@ -30,7 +28,7 @@ const classes = {
 const StyledContainer = styled(Container)(({ theme }) => {
   return {
     [`& .${classes.text}`]: {
-      color: purple[800],
+      color: "#8B7355",
     },
     [`& .${classes.box}`]: {
       "&:hover": {
@@ -93,109 +91,10 @@ const StyledContainer = styled(Container)(({ theme }) => {
 })
 
 export default function About() {
-  const stars = {
-    eval1: (
-      <Box>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-      </Box>
-    ),
-    eval2: (
-      <Box>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-      </Box>
-    ),
-    eval3: (
-      <Box>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-      </Box>
-    ),
-    eval4: (
-      <Box>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon className={classes.text}></StarIcon>
-        <StarIcon color="secondary"></StarIcon>
-      </Box>
-    ),
-    eval5: (
-      <Box>
-        <StarIcon color="primary"></StarIcon>
-        <StarIcon color="primary"></StarIcon>
-        <StarIcon color="primary"></StarIcon>
-        <StarIcon color="primary"></StarIcon>
-        <StarIcon color="primary"></StarIcon>
-      </Box>
-    ),
-  }
-
-  const menuItems = [
-    {
-      text: "javascript",
-      icon: stars.eval4,
-    },
-    {
-      text: "HTML",
-      icon: stars.eval4,
-    },
-    {
-      text: "CSS",
-      icon: stars.eval4,
-    },
-    {
-      text: "ReactJs",
-      icon: stars.eval4,
-    },
-    {
-      text: "Next.js",
-      icon: stars.eval4,
-    },
-    {
-      text: "jQuery",
-      icon: stars.eval3,
-    },
-    {
-      text: "illustrator",
-      icon: stars.eval3,
-    },
-  ]
-  const menuItems1 = [
-    {
-      text: "Java",
-      icon: stars.eval3,
-    },
-    {
-      text: "PHP",
-      icon: stars.eval3,
-    },
-    {
-      text: "Swift",
-      icon: stars.eval2,
-    },
-    {
-      text: "Objective-C",
-      icon: stars.eval2,
-    },
-    {
-      text: "MySQL",
-      icon: stars.eval3,
-    },
-    {
-      text: "PosgreSQL",
-      icon: stars.eval3,
-    },
+  const skills = [
+    "TypeScript", "JavaScript", "React", "Next.js", "Redux", "Zustand",
+    "HTML", "CSS", "Tailwind CSS", "Node.js", "PostgreSQL", "Firebase",
+    "Redis", "Figma", "Git",
   ]
 
   return (
@@ -220,29 +119,52 @@ export default function About() {
           </Grid>
           <Grid item sm={12} md={6} container data-aos="fade-up">
             <Grid item>
-              <Typography className={classes.subtitle}>
+              <Typography
+                sx={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 400,
+                  letterSpacing: "0.12em",
+                  fontSize: "1.5rem",
+                }}
+              >
                 CHIORI SUZUKI
               </Typography>
             </Grid>
             <Grid item>
               <Typography className={classes.body}>
-                I am a junior programmer with knowledge of front-end techniques.
-                <br />I like studying new technology and improving my skills. I
-                like working with team and helping others.{" "}
+                Full-stack developer with 8+ years of professional
+                experience across Japan and Canada. Front-end focused,
+                with solid back-end experience in Node.js and PostgreSQL.
+                Specialized in building scalable, user-friendly web
+                applications using modern React ecosystems. Passionate
+                about clean UI/UX and cross-functional team collaboration.
               </Typography>
             </Grid>
             <Grid item>
-              <Grid container direction="row" alignItems="center">
-                <Typography className={classes.body}>Resume →</Typography>
-                <IconButton
-                  href="https://docs.google.com/document/d/1s2E-aVGo1TkSwELzQnKn-KaC9BgyEERfqCC1qm5JXQg/edit"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  size="large"
-                >
-                  <AttachFileIcon />
-                </IconButton>
-              </Grid>
+              <Button
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  border: "1px solid #1A1A1A",
+                  padding: "8px 24px",
+                  borderRadius: "2px",
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 300,
+                  fontSize: "0.875rem",
+                  letterSpacing: "0.08em",
+                  color: "#1A1A1A",
+                  background: "transparent",
+                  textTransform: "none",
+                  "&:hover": {
+                    background: "#1A1A1A",
+                    color: "#FAFAF8",
+                    transition: "all 0.2s ease",
+                  },
+                }}
+              >
+                Resume →
+              </Button>
             </Grid>
           </Grid>
         </Grid>
@@ -251,46 +173,28 @@ export default function About() {
         <Grid item xs={12} container justifyContent="center">
           <Typography className={classes.subtitle}>SKILLS</Typography>
         </Grid>
-        <Grid item container spacing={10}>
-          <Grid item xs={12} sm={12} md={6}>
-            {menuItems.map((item) => (
-              <Box
-                className={classes.box}
-                key={item.text}
-                display="flex"
-                flexDirection="row"
-              >
-                <Box flexGrow={1} mb={1}>
-                  <Typography className={classes.body} gutterBottom>
-                    {item.text}
-                  </Typography>
-                </Box>
-                {item.icon}
-              </Box>
+        <Grid item xs={12} container justifyContent="center">
+          <Box display="flex" flexWrap="wrap" justifyContent="center" gap={1.5}>
+            {skills.map((skill) => (
+              <Chip
+                key={skill}
+                label={skill}
+                sx={{
+                  background: "#F0EDE6",
+                  borderRadius: "4px",
+                  padding: "4px 12px",
+                  fontSize: "14px",
+                  fontFamily: "'Inter', sans-serif",
+                  color: "#1A1A1A",
+                }}
+              />
             ))}
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} data-aos="fade-up">
-            {menuItems1.map((item) => (
-              <Box
-                className={classes.box}
-                key={item.text}
-                display="flex"
-                flexDirection="row"
-              >
-                <Box flexGrow={1} mb={1}>
-                  <Typography className={classes.body} gutterBottom>
-                    {item.text}
-                  </Typography>
-                </Box>
-                {item.icon}
-              </Box>
-            ))}
-          </Grid>
+          </Box>
         </Grid>
       </Grid>
       <Grid container spacing={5}>
         <Grid item xs={12} container justifyContent="center" data-aos="fade-up">
-          <Typography className={classes.subtitle}>EDUCATIONS</Typography>
+          <Typography className={classes.subtitle}>EDUCATION</Typography>
         </Grid>
         <Grid item xs={12} container>
           <Grid item xs={12} md={6} data-aos="fade-up">
@@ -328,7 +232,7 @@ export default function About() {
               Cornerstone International Community College of Canada
             </Typography>
             <Typography className={classes.body2}>
-              Apr 2020 - expected 2022
+              Apr 2020 - Mar 2022
             </Typography>
             <Grid
               container
@@ -347,7 +251,7 @@ export default function About() {
             </Typography>
             <Typography className={classes.body2}>
               Practicing web design skills with HTML, CSS, JavaScript framework
-              courses are designed for web programrming. Learning Java, Android,
+              courses are designed for web programming. Learning Java, Android,
               and Swift languages are another option for mobile app development.
             </Typography>
           </Grid>
@@ -379,10 +283,11 @@ export default function About() {
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2">Front-End Developer</Typography>
             <Typography className={classes.body2}>
-              Developed a clinic management system with a user-friendly calendar
-              for scheduling. Created a patient reservation system for direct
-              booking. Utilized Figma, React, Node.js, and PostgreSQL for smooth
-              and robust performance.
+              Developed an internal clinic management system deployed
+              across medical facilities in Japan. Built a calendar-based
+              scheduling UI for patient appointments and a direct
+              reservation booking system, designed for non-technical
+              medical staff. Stack: React, Node.js, PostgreSQL, Figma.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -404,10 +309,12 @@ export default function About() {
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2">Front-End Developer</Typography>
             <Typography className={classes.body2}>
-              Developed a user dashboard and incorporation submission form using
-              React and Redux. Collaborated with design and business teams for a
-              seamless UI/UX aligned with company goals. Ensured cross-device
-              compatibility and optimal performance.
+              Top contributor with 608 commits across 11 months. Built an
+              AI-powered chat system with Voiceflow and Redis-backed
+              conversation history on Next.js 15 / React 19. Developed the
+              BYOE (Bring Your Own Entity) onboarding flow for multiple
+              jurisdictions. Built a reusable component library with
+              dark/light mode using Tailwind CSS v4.
             </Typography>
           </Grid>
         </Grid>
@@ -440,7 +347,7 @@ export default function About() {
         </Grid>
         <Grid item xs={12} container data-aos="fade-up">
           <Grid item xs={12} md={6}>
-            <Typography variant="h6">NEC Solution Inovator Inc</Typography>
+            <Typography variant="h6">NEC Solution Innovator Inc</Typography>
             <Typography className={classes.body2}>
               Apr 2016 - Mar 2020
             </Typography>
@@ -458,9 +365,9 @@ export default function About() {
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2">Software Developer</Typography>
             <Typography className={classes.body2}>
-              Designed, developped, tested the POS system to validate the data
+              Designed, developed, tested the POS system to validate the data
               and the functions. Updated the functions in response to customer's
-              requirments.
+              requirements.
             </Typography>
           </Grid>
         </Grid>

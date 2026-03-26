@@ -24,7 +24,7 @@ const StyledAppBar = styled(AppBar)(({ theme }) => {
     },
     [`& .${classes.textColor}`]: {
       "&:hover": {
-        background: "linear-gradient(to right bottom, #9BA8FC, #F2BEE4)",
+        background: "rgba(139, 115, 85, 0.2)",
       },
       marginLeft: 15,
       padding: "1%",

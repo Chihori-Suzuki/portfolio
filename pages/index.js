@@ -41,12 +41,12 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
-        color: "#EFC2FF",
+        color: "#FAFAF8",
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "60px",
         fontWeight: "400",
-        color: "#EFC2FF",
+        color: "#FAFAF8",
       },
     },
     [`& .${classes.typography1}`]: {
@@ -66,28 +66,31 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
-        color: "#590477",
+        color: "#1A1A1A",
+        fontFamily: "'Cormorant Garamond', serif",
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "60px",
         fontWeight: "400",
-        color: "#590477",
+        color: "#1A1A1A",
+        fontFamily: "'Cormorant Garamond', serif",
       },
       padding: "5%",
     },
     [`& .${classes.gridContact}`]: {
-      marginTop: "10%",
-      marginBottom: "10%",
+      marginTop: "80px",
+      marginBottom: "80px",
       textAlign: "center",
     },
 
     [`& .${classes.paper}`]: {
       display: "flex",
-      backgroundColor: "#FFFFFF",
+      backgroundColor: "#FAFAF8",
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
-      paddingBottom: "10%",
+      paddingTop: "40px",
+      paddingBottom: "40px",
       [theme.breakpoints.down("md")]: {
         paddingLeft: "10%",
         paddingRight: "10%",
@@ -99,11 +102,12 @@ const StyledPaper = styled(Paper)(({ theme }) => {
     },
     [`& .${classes.paper2}`]: {
       display: "flex",
-      backgroundColor: "#F1E7FF",
+      backgroundColor: "#FAFAF8",
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
-      paddingBottom: "10%",
+      paddingTop: "80px",
+      paddingBottom: "80px",
       [theme.breakpoints.down("md")]: {
         paddingLeft: "10%",
         paddingRight: "10%",
@@ -117,7 +121,7 @@ const StyledPaper = styled(Paper)(({ theme }) => {
     [`&.${classes.backpaper}`]: {
       // display: "fixed",
       padding: "5%",
-      background: "rgba(61, 5, 96, 0.6)",
+      background: "rgba(26, 26, 26, 0.5)",
     },
   }
 })
@@ -158,7 +162,7 @@ export default function Home() {
               CHIORI SUZUKI
             </h2>
             <h5 className={classes.typography1} color="secondary">
-              Web Developer / Full-stack Engineer
+              Full-Stack Developer / Front-End Focused
             </h5>
 
             <Typography variant="h6"></Typography>

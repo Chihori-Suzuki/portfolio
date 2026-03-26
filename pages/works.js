@@ -46,10 +46,10 @@ const StyledPaper = styled(Paper)(({ theme }) => {
     [`& .${classes.textColor}`]: {
       marginLeft: "3%",
       padding: "1%",
-      color: "black",
+      color: "#1A1A1A",
       fontSize: "20px",
       "&:hover": {
-        background: "linear-gradient(to right bottom, #9BA8FC, #F2BEE4)",
+        background: "rgba(139, 115, 85, 0.2)",
       },
     },
     [`& .${classes.typography2}`]: {
@@ -57,12 +57,14 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       [theme.breakpoints.down("md")]: {
         fontSize: "30px",
         fontWeight: "300",
-        color: "#590477",
+        color: "#1A1A1A",
+        fontFamily: "'Cormorant Garamond', serif",
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "40px",
         fontWeight: "400",
-        color: "#590477",
+        color: "#1A1A1A",
+        fontFamily: "'Cormorant Garamond', serif",
       },
       padding: "5%",
     },
@@ -136,12 +138,29 @@ export default function Works({ id }) {
         justifyContent="space-between"
       >
         <h2 className={classes.typography2}>{works[id].title}</h2>
-        <Image
-          src={works[id].image}
-          width={600}
-          height={400}
-          className={classes.margin}
-        ></Image>
+        {works[id].image ? (
+          <Image
+            src={works[id].image}
+            width={600}
+            height={400}
+            className={classes.margin}
+          ></Image>
+        ) : (
+          <Box
+            sx={{
+              width: 600,
+              height: 400,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#F5F2EC",
+              borderRadius: 0,
+              color: "#888888",
+            }}
+          >
+            <Typography variant="h6">No Image Available</Typography>
+          </Box>
+        )}
         <Box mt="5%" mx="7%">
           <Typography variant="body1" gutterBottom className={classes.body}>
             {works[id].details}
@@ -153,18 +172,22 @@ export default function Works({ id }) {
         <Typography variant="h6" gutterBottom className={classes.body2}>
           {works[id].stacks}
         </Typography>
-        <Typography variant="h5" className={classes.subtitle}>
-          Link
-        </Typography>
-        <Link
-          variant="h6"
-          href={works[id].link}
-          target="_blank"
-          className={classes.body3}
-          color="#000000"
-        >
-          {works[id].link}
-        </Link>
+        {works[id].link && (
+          <>
+            <Typography variant="h5" className={classes.subtitle}>
+              Link
+            </Typography>
+            <Link
+              variant="h6"
+              href={works[id].link}
+              target="_blank"
+              className={classes.body3}
+              color="#8B7355"
+            >
+              {works[id].link}
+            </Link>
+          </>
+        )}
       </Grid>
     </StyledPaper>
   )
