@@ -1,4 +1,4 @@
-import { Container, Grid, Paper, Typography } from "@mui/material"
+import { Container, Grid, Paper } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import { colors } from "../src/theme"
 import React, { useEffect } from "react"
@@ -32,7 +32,7 @@ const StyledPaper = styled(Paper)(({ theme }) => {
     [`& .${classes.toolbar}`]: theme.mixins.toolbar,
     [`& .${classes.top}`]: {
       marginTop: "10%",
-      marginBottom: "30%",
+      marginBottom: "15%",
       textAlign: "center",
     },
     [`& .${classes.card}`]: {
@@ -76,11 +76,12 @@ const StyledPaper = styled(Paper)(({ theme }) => {
         color: colors.text,
         fontFamily: "'Cormorant Garamond', serif",
       },
-      padding: "5%",
+      paddingTop: "24px",
+      paddingBottom: "8px",
     },
     [`& .${classes.gridContact}`]: {
-      marginTop: "80px",
-      marginBottom: "80px",
+      marginTop: "60px",
+      marginBottom: "60px",
       textAlign: "center",
     },
 
@@ -90,8 +91,8 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
-      paddingTop: "40px",
-      paddingBottom: "40px",
+      paddingTop: "20px",
+      paddingBottom: "48px",
       [theme.breakpoints.down("md")]: {
         paddingLeft: "10%",
         paddingRight: "10%",
@@ -107,8 +108,8 @@ const StyledPaper = styled(Paper)(({ theme }) => {
       marginLeft: "calc(((100vw - 100%) / 2) * -1)",
       marginRight: "calc(((100vw - 100%) / 2) * -1)",
       borderRadius: 0,
-      paddingTop: "80px",
-      paddingBottom: "80px",
+      paddingTop: "20px",
+      paddingBottom: "60px",
       [theme.breakpoints.down("md")]: {
         paddingLeft: "10%",
         paddingRight: "10%",
@@ -165,8 +166,6 @@ export default function Home() {
             <h5 className={classes.typography1} color="secondary">
               Full-Stack Developer / Front-End Focused
             </h5>
-
-            <Typography variant="h6"></Typography>
           </motion.div>
         </Container>
         {/* Works */}
@@ -180,7 +179,7 @@ export default function Home() {
             <h2 className={classes.typography2} id="work" data-aos="fade-up">
               WORKS
             </h2>
-            <Grid container spacing={8}>
+            <Grid container spacing={5}>
               {works.map((work) => (
                 <Grid
                   item

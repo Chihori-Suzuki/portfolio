@@ -1,7 +1,6 @@
 import { Grid, IconButton } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import { colors } from "../src/theme"
-import InstagramIcon from "@mui/icons-material/Instagram"
 import EmailIcon from "@mui/icons-material/Email"
 import GitHubIcon from "@mui/icons-material/GitHub"
 
@@ -54,14 +53,6 @@ export default function ContactPage() {
       alignItems="center"
       data-aos="fade-up"
     >
-      <IconButton
-        href="https://www.instagram.com/chihhorin/"
-        target="_blank"
-        rel="noopener noreferrer"
-        size="large"
-      >
-        <InstagramIcon className={classes.icon}></InstagramIcon>
-      </IconButton>
       <IconButton
         href="https://github.com/Chihori-Suzuki"
         target="_blank"
