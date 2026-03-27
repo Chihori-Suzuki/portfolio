@@ -19,4 +19,14 @@ export const works = [
     stacks: "React, Node.js, PostgreSQL, Figma",
     link: "",
   },
+  {
+    id: 2,
+    title: "foRPro – Consultant Matching Platform",
+    details:
+      "Migrated a freelance consultant matching platform's landing page from static HTML to Next.js at Logical Fabrics, improving performance, SEO, and maintainability. The platform connects freelance consultants with high-value DX projects across Japan.",
+    category: "Next.js / TypeScript / Firebase",
+    image: "/forpro.png",
+    stacks: "Next.js, TypeScript, Firebase",
+    link: "https://for-professional.jp",
+  },
 ]
