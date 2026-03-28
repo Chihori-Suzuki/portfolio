@@ -1,8 +1,6 @@
 import {
   Box,
-  ButtonBase,
   Card,
-  CardActionArea,
   CardContent,
   CardMedia,
   Typography,
@@ -51,36 +49,32 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-export default function WorkCard({ work }) {
+export default function WorkCard({ work, onClick }) {
   return (
-    <StyledCard className={classes.card} elevation={0}>
-      <CardActionArea href={"/works?id=" + work.id}>
-        <ButtonBase style={{ width: "100%" }}>
-          <div className={classes.box} style={{ width: "100%" }}>
-            {work.image ? (
-              <CardMedia
-                component="img"
-                image={work.image}
-                height="300"
-                title={work.image}
-                style={{ objectFit: "cover", width: "100%", borderRadius: 0 }}
-              />
-            ) : (
-              <Box className={classes.placeholder}>
-                <Typography variant="body1">No Image Available</Typography>
-              </Box>
-            )}
-            <CardContent>
-              <Typography gutterBottom variant="h5" sx={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                {work.title}
-              </Typography>
-              <Typography gutterBottom variant="body2">
-                {work.category}
-              </Typography>
-            </CardContent>
-          </div>
-        </ButtonBase>
-      </CardActionArea>
+    <StyledCard className={classes.card} elevation={0} onClick={() => onClick(work)}>
+      <div className={classes.box} style={{ width: "100%" }}>
+        {work.image ? (
+          <CardMedia
+            component="img"
+            image={work.image}
+            height="300"
+            title={work.image}
+            style={{ objectFit: "cover", width: "100%", borderRadius: 0 }}
+          />
+        ) : (
+          <Box className={classes.placeholder}>
+            <Typography variant="body1">No Image Available</Typography>
+          </Box>
+        )}
+        <CardContent>
+          <Typography gutterBottom variant="h5" sx={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            {work.title}
+          </Typography>
+          <Typography gutterBottom variant="body2">
+            {work.category}
+          </Typography>
+        </CardContent>
+      </div>
     </StyledCard>
   )
 }

@@ -1,11 +1,12 @@
 import { Container, Grid, Paper } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import { colors } from "../src/theme"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import WorkCards from "../comps/WorkCards"
 import ContactPage from "../comps/ContactPage"
 import About from "../comps/About"
+import WorkModal from "../comps/WorkModal"
 import { motion } from "framer-motion"
 import { works } from "../data/data"
 import NavBar from "../comps/NavBar"
@@ -147,6 +148,8 @@ const containerVariants = {
 }
 
 export default function Home() {
+  const [selectedWork, setSelectedWork] = useState(null)
+
   useEffect(() => {
     AOS.init({ duration: 1200, once: true })
   }, [])
@@ -193,7 +196,7 @@ export default function Home() {
                   lg={6}
                   data-aos="fade-up"
                 >
-                  <WorkCards className={classes.card} work={work} />
+                  <WorkCards className={classes.card} work={work} onClick={setSelectedWork} />
                 </Grid>
               ))}
             </Grid>
@@ -244,6 +247,9 @@ export default function Home() {
           objectFit="cover"
         />
       </div>
+      {selectedWork && (
+        <WorkModal work={selectedWork} onClose={() => setSelectedWork(null)} />
+      )}
     </>
   )
 }
