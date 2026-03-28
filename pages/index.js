@@ -126,9 +126,11 @@ const StyledPaper = styled(Paper)(({ theme }) => {
     },
 
     [`&.${classes.backpaper}`]: {
-      // display: "fixed",
+      position: "relative",
+      zIndex: 1,
       padding: "5%",
       background: colors.overlay,
+      minHeight: "100vh",
     },
   }
 })
