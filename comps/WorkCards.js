@@ -63,7 +63,7 @@ export default function WorkCard({ work }) {
                 image={work.image}
                 height="300"
                 title={work.image}
-                style={{ objectFit: "fill", width: "100%", borderRadius: 0 }}
+                style={{ objectFit: "cover", width: "100%", borderRadius: 0 }}
               />
             ) : (
               <Box className={classes.placeholder}>
